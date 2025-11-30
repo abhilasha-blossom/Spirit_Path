@@ -1,17 +1,44 @@
-# React + Vite
+# Spirit Path 🌸
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> "All journeys begin with a single choice."
 
-Currently, two official plugins are available:
+**Spirit Path** is an immersive visual novel built with React and Vite. Journey through mystical realms, make choices that shape your virtue, and discover your Spirit Guardian.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## React Compiler
+- **Cinematic Experience**: Vignettes, lantern glows, and smooth scene transitions.
+- **Dynamic Audio**: Background music that adapts to your environment (Forest, City, Shrine).
+- **Spirit System**: Your choices track virtues (Strength, Harmony, Wisdom, Affection, Loyalty) to reveal a unique spirit animal.
+- **Responsive Design**: Play on desktop or mobile.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 How to Run
 
-## Expanding the ESLint configuration
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+2.  **Start Development Server**:
+    ```bash
+    npm run dev
+    ```
+3.  **Build for Production**:
+    ```bash
+    npm run build
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Spirit_Path
+## 🌐 Deployment
+
+This project is ready for deployment on **Netlify** or **Vercel**.
+
+- **Netlify**: The `public/_redirects` file is included to handle client-side routing.
+- **Vercel**: Zero-configuration deployment is supported out of the box.
+
+## 🎨 Credits
+
+- **Engine**: React + Vite
+- **Assets**: Placeholder images/audio from Pixabay (Free for commercial use).
+- **Design**: Custom CSS with glassmorphism and anime-inspired aesthetics.
+
+---
+
+*Created by Antigravity*

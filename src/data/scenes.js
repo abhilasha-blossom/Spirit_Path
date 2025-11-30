@@ -1,23 +1,28 @@
+import introForest from "../assets/backgrounds/intro_forest.png";
+import seoulMarket from "../assets/backgrounds/seoul_market.png";
+import kyotoShrine from "../assets/backgrounds/kyoto_shrine.png";
+import chinaLake from "../assets/backgrounds/china_lake.png";
+
 export const virtues = ["strength", "harmony", "affection", "wisdom", "loyalty"];
 
 export const scenes = {
   intro_forest: {
     id: "intro_forest",
-    background: "/assets/backgrounds/intro_forest.jpg",
-    title: "Whispering Forest",
-    text: `Mist curls around ancient trees as fireflies glow softly.\nA wooden sign reads: "All journeys begin with a single choice."`,
+    background: introForest,
+    title: "The Spirit Path",
+    text: `You stand at the edge of a bioluminescent forest. The air hums with ancient energy.\nFireflies dance around you, waiting for you to take the first step.`,
     choices: [
       {
-        label: "Step onto the Spirit Path",
+        label: "Step onto the mossy path 🌿",
         next: "path_choice",
-        virtue: null,
+        virtue: "strength",
       },
     ],
   },
 
   path_choice: {
     id: "path_choice",
-    background: "/assets/backgrounds/intro_forest.jpg",
+    background: introForest,
     title: "Crossroads of Realms",
     text: `Three distant lights call you from different lands.`,
     choices: [
@@ -28,12 +33,12 @@ export const scenes = {
       },
       {
         label: "Follow the soft lanterns of Kyoto Shrine 🎐",
-        next: "placeholder_kyoto",
+        next: "kyoto_shrine",
         virtue: "wisdom",
       },
       {
         label: "Follow the reflection of a Chinese Lantern Lake 🏮",
-        next: "placeholder_china",
+        next: "china_lake",
         virtue: "harmony",
       },
     ],
@@ -41,7 +46,7 @@ export const scenes = {
 
   seoul_market: {
     id: "seoul_market",
-    background: "/assets/backgrounds/seoul_market.jpg",
+    background: seoulMarket,
     title: "Seoul Night Market",
     text: `Music, street food and neon lights dance around you.\nA vendor smiles: "처음 왔어요? (First time here?)"`,
     choices: [
@@ -65,7 +70,7 @@ export const scenes = {
 
   seoul_karaoke: {
     id: "seoul_karaoke",
-    background: "/assets/backgrounds/seoul_market.jpg",
+    background: seoulMarket,
     title: "Karaoke Glow",
     text: `A glowing karaoke booth waits.\n"What kind of song will you sing?"`,
     choices: [
@@ -89,7 +94,7 @@ export const scenes = {
 
   preview_ending: {
     id: "preview_ending",
-    background: "/assets/backgrounds/intro_forest.jpg",
+    background: introForest,
     title: "A Presence Watching",
     text: `Something ancient watches from the trees... not hostile, but curious.`,
     choices: [
@@ -103,7 +108,7 @@ export const scenes = {
 
   ending_demo: {
     id: "ending_demo",
-    background: "/assets/backgrounds/intro_forest.jpg",
+    background: introForest,
     title: "Which spirit follows you?",
     isEnding: true,
     text: `The full spirit selection will appear here.\nThis is only a demo ending.`,
@@ -116,19 +121,91 @@ export const scenes = {
     ],
   },
 
-  placeholder_kyoto: {
-    id: "placeholder_kyoto",
-    background: "/assets/backgrounds/intro_forest.jpg",
-    title: "Kyoto Shrine (Coming soon)",
-    text: "This path will lead to Shrine Festivals & Kitsune masks.",
-    choices: [{ label: "Return", next: "path_choice", virtue: null }],
+  // --- Kyoto Path ---
+  kyoto_shrine: {
+    id: "kyoto_shrine",
+    background: kyotoShrine,
+    title: "Fushimi Inari Shrine",
+    text: `Thousands of vermilion torii gates wind up the mountain.\nA white fox (Kitsune) watches you from the shadows.`,
+    choices: [
+      {
+        label: "Bow respectfully to the spirit 🙇",
+        next: "kyoto_ritual",
+        virtue: "harmony",
+      },
+      {
+        label: "Ask the fox for guidance 🦊",
+        next: "kyoto_ritual",
+        virtue: "wisdom",
+      },
+    ],
   },
 
-  placeholder_china: {
-    id: "placeholder_china",
-    background: "/assets/backgrounds/intro_forest.jpg",
-    title: "Lantern Lake (Coming soon)",
-    text: "This path will lead to Lantern riddles & Dragon stories.",
-    choices: [{ label: "Return", next: "path_choice", virtue: null }],
+  kyoto_ritual: {
+    id: "kyoto_ritual",
+    background: kyotoShrine,
+    title: "The Sacred Ritual",
+    text: `The fox leads you to an ancient altar where incense burns.\n"To know the path, you must know yourself."`,
+    choices: [
+      {
+        label: "Meditate on your past actions 🧘",
+        next: "preview_ending",
+        virtue: "wisdom",
+      },
+      {
+        label: "Offer a prayer for your loved ones 🙏",
+        next: "preview_ending",
+        virtue: "affection",
+      },
+      {
+        label: "Vow to protect this sacred place ⚔️",
+        next: "preview_ending",
+        virtue: "loyalty",
+      },
+    ],
+  },
+
+  // --- China Path ---
+  china_lake: {
+    id: "china_lake",
+    background: chinaLake,
+    title: "Moonlit Lantern Lake",
+    text: `The full moon reflects on the calm water, disturbed only by koi fish.\nA stone dragon statue seems to hum with energy.`,
+    choices: [
+      {
+        label: "Light a floating lantern 🏮",
+        next: "china_riddle",
+        virtue: "harmony",
+      },
+      {
+        label: "Study the dragon's inscriptions 📜",
+        next: "china_riddle",
+        virtue: "wisdom",
+      },
+    ],
+  },
+
+  china_riddle: {
+    id: "china_riddle",
+    background: chinaLake,
+    title: "The Dragon's Riddle",
+    text: `The dragon speaks in a voice like grinding stones:\n"I have no voice, but I tell stories. I have no wings, but I fly. What am I?"`,
+    choices: [
+      {
+        label: "A Book 📖",
+        next: "preview_ending",
+        virtue: "wisdom",
+      },
+      {
+        label: "A Lantern 🏮",
+        next: "preview_ending",
+        virtue: "harmony",
+      },
+      {
+        label: "A Spirit 👻",
+        next: "preview_ending",
+        virtue: "strength",
+      },
+    ],
   },
 };

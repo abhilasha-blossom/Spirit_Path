@@ -1,12 +1,18 @@
+import { useGame } from "../context/GameContext";
+
 export default function Character({ walking }) {
+  const { travellerImage } = useGame();
+
+  if (!travellerImage) return null;
+
   return (
     <img
-      src="/assets/characters/traveller.png"
+      src={travellerImage}
       alt="Traveller"
+      className="character-img character-enter"
       style={{
-        height: "200px",
-        transition: "transform 0.7s ease",
-        transform: walking ? "translateX(120px)" : "translateX(0px)",
+        transform: walking ? "translateX(calc(-50% + 20px))" : "translateX(-50%)", // Subtle movement
+        mixBlendMode: "multiply",
       }}
     />
   );
