@@ -1,17 +1,74 @@
-# React + Vite
+🌸 SPIRIT PATH — An Aesthetic Interactive Story Game
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=F7C6FF&text=🌙%20Spirit%20Path%20%20🌸&fontColor=46245B&fontSize=45&animation=twinkling" /> </p> <p align="center"> <b>A magical anime-inspired journey shaped by your choices, emotions & virtues.</b> <br/> 🌌 East Asian culture • 🎐 Folklore • 🎭 Spirit Companions • 💮 Aesthetic UI </p>
+🪷 About the Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Spirit Path is a cinematic interactive story where your decisions determine your destiny.
+Travel across mystical East Asian worlds and uncover which ancient spirit companion chooses you.
 
-Currently, two official plugins are available:
+🕊️ Virtues & Spirits
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Your hidden choices awaken one spirit based on your personality:
 
-## React Compiler
+Virtue	Spirit	Element
+Strength (力)	🐯 Tiger	Fire
+Harmony (和)	🕊️ Crane	Air
+Affection (愛)	🦊 Kitsune	Blossom
+Wisdom (知)	🐉 Dragon	Cloud
+Loyalty (信)	🐺 Wolf	Moon
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+No winners. No losers.
+Every ending is beautiful in its own way.
 
-## Expanding the ESLint configuration
+🎮 Current Progress
+Feature	Status
+Scene system	✔
+Virtue scoring	✔
+Character walking animation	✔
+Fireflies visual effect	✔
+Fog & Sakura particles	🌸 In progress
+Lantern glow & depth lighting	🔜
+Ending spirit reveal animation	🔜
+Background music	🔜
+🌈 Screenshots / Preview (coming soon)
+📌 Add screenshots here once visuals are complete
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Spirit_Path
+🔗 Live Demo (optional)
+📌 Add link here when deployed on Netlify / Vercel
+
+🧠 Installation
+git clone https://github.com/abhilasha-blossom/Spirit_Path.git
+cd Spirit_Path
+npm install
+npm run dev
+
+📁 Folder Structure
+src/
+ ├─ assets/
+ │   ├─ backgrounds/
+ │   └─ characters/
+ ├─ components/
+ ├─ context/
+ ├─ data/
+ ├─ App.jsx
+ ├─ main.jsx
+ └─ styles.css
+
+💫 Tech Stack
+Category	Tools
+Frontend	React + Vite
+State	React Context API
+Styling	Pure CSS
+Animations	CSS Particles & Transitions
+Design Style	Ghibli watercolor / pastel anime
+🤍 Creator
+
+Made with love by Abhilasha 🌸
+
+turning imagination into interactive worlds.
+
+If you enjoy the project, please ⭐ star the repository — it really motivates!
+
+📝 License
+
+This project is currently personal & experimental.
+Open-source license will be added once development stabilizes.
