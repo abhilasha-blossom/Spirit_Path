@@ -31,12 +31,10 @@ export function GameProvider({ children }) {
       setVirtueScores(newScores);
     }
 
-    if (nextId === "ending_demo") {
+    if (nextId === "calculate_ending") {
       const topVirtue = getTopVirtue(newScores);
-      // You could store the result in a separate state if needed, 
-      // or just pass it via the scene ID or a query param.
-      // For now, let's just navigate to the ending scene.
-      // We will handle the calculation display in the component.
+      // Redirect to the specific ending scene
+      nextId = `ending_${topVirtue}`;
     }
 
     setCurrentSceneId(nextId);

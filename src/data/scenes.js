@@ -44,6 +44,7 @@ export const scenes = {
     ],
   },
 
+  // --- Seoul Path ---
   seoul_market: {
     id: "seoul_market",
     background: seoulMarket,
@@ -52,71 +53,61 @@ export const scenes = {
     choices: [
       {
         label: "Scream for help 😱",
-        next: "seoul_karaoke",
+        next: "seoul_subway",
         virtue: "survival",
       },
       {
         label: "Ask who they are ❓",
-        next: "seoul_karaoke",
+        next: "seoul_subway",
         virtue: "obsession",
       },
       {
         label: "Attack them ⚔️",
-        next: "seoul_karaoke",
+        next: "seoul_subway",
         virtue: "dominance",
       },
     ],
   },
 
-  seoul_karaoke: {
-    id: "seoul_karaoke",
+  seoul_subway: {
+    id: "seoul_subway",
     background: seoulMarket,
-    title: "Karaoke of Screams",
-    text: `They drag you into a karaoke booth. The song playing is a recording of your own voice sleeping.\n"Sing for me, or stay here forever."`,
+    title: "Ghost Train",
+    text: `You stumble into a subway station. The train arrives, but it's empty.\nReflections in the window show someone standing behind you.`,
     choices: [
       {
-        label: "Sing a love song 🎤",
-        next: "preview_ending",
+        label: "Don't turn around 🚫",
+        next: "seoul_rooftop",
         virtue: "submission",
       },
       {
-        label: "Smash the screen 🔨",
-        next: "preview_ending",
+        label: "Confront the reflection 🪞",
+        next: "seoul_rooftop",
+        virtue: "madness",
+      },
+    ],
+  },
+
+  seoul_rooftop: {
+    id: "seoul_rooftop",
+    background: seoulMarket,
+    title: "Neon Rain",
+    text: `The train stops at a rooftop. Rain falls like static.\nThey are waiting for you at the edge. "Jump with me, or stay with me."`,
+    choices: [
+      {
+        label: "Push them off ✋",
+        next: "calculate_ending",
         virtue: "dominance",
       },
       {
-        label: "Beg for mercy 😭",
-        next: "preview_ending",
+        label: "Take their hand 🤝",
+        next: "calculate_ending",
+        virtue: "obsession",
+      },
+      {
+        label: "Jump alone 🕊️",
+        next: "calculate_ending",
         virtue: "survival",
-      },
-    ],
-  },
-
-  preview_ending: {
-    id: "preview_ending",
-    background: introForest,
-    title: "He is Watching",
-    text: `The shadows lengthen. You feel cold breath on your neck.\n"I found you."`,
-    choices: [
-      {
-        label: "Accept your fate (End Demo)",
-        next: "ending_demo",
-        virtue: null,
-      },
-    ],
-  },
-
-  ending_demo: {
-    id: "ending_demo",
-    background: introForest,
-    title: "Game Over... or Beginning?",
-    isEnding: true,
-    text: `The full nightmare continues later.\nWill you survive their love?`,
-    choices: [
-      {
-        label: "Try to escape again",
-        next: "intro_forest",
-        virtue: null,
       },
     ],
   },
@@ -130,37 +121,56 @@ export const scenes = {
     choices: [
       {
         label: "Pray for protection 🙏",
-        next: "kyoto_ritual",
+        next: "kyoto_forest",
         virtue: "submission",
       },
       {
         label: "Stare back at the fox 👁️",
-        next: "kyoto_ritual",
+        next: "kyoto_forest",
         virtue: "madness",
       },
     ],
   },
 
-  kyoto_ritual: {
-    id: "kyoto_ritual",
+  kyoto_forest: {
+    id: "kyoto_forest",
     background: kyotoShrine,
-    title: "The Blood Ritual",
-    text: `The fox transforms into a beautiful man with a twisted smile.\n"Your soul is so pretty. Let me keep it."`,
+    title: "Whispering Bamboo",
+    text: `The bamboo stalks whisper your name. You find a mask on the ground.\nIt looks exactly like your face.`,
     choices: [
       {
-        label: "Offer your hand 🤝",
-        next: "preview_ending",
+        label: "Put it on 🎭",
+        next: "kyoto_temple",
+        virtue: "madness",
+      },
+      {
+        label: "Break it 🔨",
+        next: "kyoto_temple",
+        virtue: "survival",
+      },
+    ],
+  },
+
+  kyoto_temple: {
+    id: "kyoto_temple",
+    background: kyotoShrine,
+    title: "The Fox's Wedding",
+    text: `You reach the inner sanctum. The fox deity is waiting in human form.\n"Be my spouse, or be my dinner."`,
+    choices: [
+      {
+        label: "Bow down 🙇",
+        next: "calculate_ending",
         virtue: "submission",
       },
       {
-        label: "Run away 🏃",
-        next: "preview_ending",
-        virtue: "survival",
+        label: "Demand power ⚡",
+        next: "calculate_ending",
+        virtue: "dominance",
       },
       {
-        label: "Laugh hysterically 😂",
-        next: "preview_ending",
-        virtue: "madness",
+        label: "Kiss them 💋",
+        next: "calculate_ending",
+        virtue: "obsession",
       },
     ],
   },
@@ -174,38 +184,99 @@ export const scenes = {
     choices: [
       {
         label: "Touch the water 🌊",
-        next: "china_riddle",
+        next: "china_wedding",
         virtue: "obsession",
       },
       {
         label: "Inspect the statue 🐉",
-        next: "china_riddle",
+        next: "china_wedding",
         virtue: "madness",
       },
     ],
   },
 
-  china_riddle: {
-    id: "china_riddle",
+  china_wedding: {
+    id: "china_wedding",
     background: chinaLake,
-    title: "The Dragon's Curse",
-    text: `The statue whispers:\n"I kill what I love, so I never have to lose it. What am I?"`,
+    title: "Ghost Wedding",
+    text: `Paper money falls from the sky. A palanquin arrives.\nInside is a corpse wearing wedding robes... holding a picture of you.`,
     choices: [
       {
-        label: "A Monster 👹",
-        next: "preview_ending",
+        label: "Get in the palanquin 🏮",
+        next: "china_lair",
+        virtue: "submission",
+      },
+      {
+        label: "Burn it 🔥",
+        next: "china_lair",
+        virtue: "dominance",
+      },
+    ],
+  },
+
+  china_lair: {
+    id: "china_lair",
+    background: chinaLake,
+    title: "Dragon's Hoard",
+    text: `You fall into a cave of bones. The Dragon awakens.\n"I kill what I love, so I never have to lose it. Are you ready to be loved?"`,
+    choices: [
+      {
+        label: "Run for your life 🏃",
+        next: "calculate_ending",
         virtue: "survival",
       },
       {
-        label: "A Lover 💔",
-        next: "preview_ending",
+        label: "Say 'I love you' ❤️",
+        next: "calculate_ending",
         virtue: "obsession",
       },
       {
-        label: "Me 🪞",
-        next: "preview_ending",
+        label: "Laugh at the beast 😂",
+        next: "calculate_ending",
         virtue: "madness",
       },
     ],
+  },
+
+  // --- Endings ---
+  ending_survival: {
+    id: "ending_survival",
+    background: introForest,
+    title: "SURVIVED",
+    isEnding: true,
+    text: "You escaped with your life, but your soul was left behind.\nEvery shadow whispers their name.",
+    choices: [{ label: "Play Again", next: "intro_forest", virtue: null }],
+  },
+  ending_obsession: {
+    id: "ending_obsession",
+    background: seoulMarket,
+    title: "ETERNAL LOVE",
+    isEnding: true,
+    text: "You didn't want to leave. You belong to them now.\nForever and ever and ever.",
+    choices: [{ label: "Play Again", next: "intro_forest", virtue: null }],
+  },
+  ending_madness: {
+    id: "ending_madness",
+    background: chinaLake,
+    title: "BROKEN MIND",
+    isEnding: true,
+    text: "The world makes no sense anymore. Only their voice is real.\nYou laugh as the darkness takes you.",
+    choices: [{ label: "Play Again", next: "intro_forest", virtue: null }],
+  },
+  ending_submission: {
+    id: "ending_submission",
+    background: kyotoShrine,
+    title: "THE PET",
+    isEnding: true,
+    text: "You stopped fighting. It's warm in their cage.\nGood pet. Good toy.",
+    choices: [{ label: "Play Again", next: "intro_forest", virtue: null }],
+  },
+  ending_dominance: {
+    id: "ending_dominance",
+    background: introForest,
+    title: "THE NEW MASTER",
+    isEnding: true,
+    text: "You killed the monster and took its throne.\nNow YOU are the one they fear.",
+    choices: [{ label: "Play Again", next: "intro_forest", virtue: null }],
   },
 };
