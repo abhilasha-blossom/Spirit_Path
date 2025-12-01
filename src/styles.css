@@ -1,19 +1,23 @@
 :root {
-  /* Premium Anime Aesthetic Palette */
-  --bg-gradient: linear-gradient(135deg, #2E1A47 0%, #452650 50%, #8A4F7D 100%);
-  --glass-panel: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.15);
-  --text-primary: #FFF0F5;
-  --text-secondary: #E6C9E0;
-  --accent-gold: #FFD700;
-  --accent-glow: #FF69B4;
+  /* Dating Killmulator / Yandere Aesthetic Palette */
+  --bg-color: #1a0b14;
+  /* Deep dark purple/black */
+  --text-primary: #ffe4e1;
+  /* Misty Rose */
+  --text-secondary: #ffb7c5;
+  /* Cherry Blossom Pink */
+  --accent-pink: #ff1493;
+  /* Deep Pink */
+  --accent-red: #ff0000;
+  /* Pure Red */
+  --accent-glow: #ff69b4;
+  /* Hot Pink */
 
-  --font-title: "Cinzel", serif;
-  /* We will need to import this or use a fallback */
-  --font-body: "Quicksand", sans-serif;
+  --font-main: "VT323", monospace;
+  /* Retro Pixel Font */
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
 /* GLOBAL */
@@ -25,124 +29,141 @@ body,
   margin: 0;
   overflow: hidden;
   font-family: var(--font-main);
-  background: #EDE3D9;
+  background: var(--bg-color);
+  color: var(--text-primary);
 }
 
-/* TEXT BOX — dreamy + soft */
+/* SCANLINE OVERLAY */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px);
+  pointer-events: none;
+  z-index: 100;
+}
+
 .text-box {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
+  max-width: 800px;
   width: 90%;
-  max-width: 700px;
-  background: var(--glass-bg);
-  border: 1.5px solid var(--glass-border);
-  backdrop-filter: blur(14px);
-  border-radius: 28px;
-  padding: 32px 36px;
   text-align: center;
-  box-shadow: 0 6px 22px rgba(186, 140, 121, 0.25);
   z-index: 20;
 }
 
+
+/* Title */
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 400;
+  /* Pixel fonts don't usually need bold */
   margin-bottom: 10px;
-  font-weight: 700;
-  background: linear-gradient(120deg, #C06C6C, #D18484);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   letter-spacing: 2px;
+  color: var(--accent-pink);
+  text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 0 0 10px var(--accent-red);
+  text-transform: uppercase;
 }
 
+
+/* Scene description */
 .scene-text {
-  color: var(--text-color);
-  font-size: 1.28rem;
-  line-height: 1.85;
-  opacity: 0.88;
-  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-top: 10px;
+  color: var(--text-primary);
+  text-shadow: 2px 2px 0px #000;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border: 2px solid var(--accent-pink);
+  box-shadow: 5px 5px 0px var(--accent-red);
 }
+
+
 
 /* BUTTONS */
 .choices {
   position: absolute;
-  bottom: 5%;
+  bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   width: 90%;
-  max-width: 540px;
-  gap: 12px;
+  max-width: 600px;
+  gap: 15px;
   z-index: 50;
 }
 
 .btn-choice {
-  background: var(--primary-color);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #FFF6EB;
-  font-weight: 600;
-  border-radius: 30px;
-  padding: 16px 26px;
+  background: #000;
+  border: 2px solid var(--accent-pink);
+  color: var(--accent-pink);
+  font-family: var(--font-main);
+  font-size: 1.8rem;
+  padding: 10px 20px;
   text-align: center;
   cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 15px rgba(186, 140, 121, 0.25);
+  transition: 0.1s ease;
+  box-shadow: 4px 4px 0px var(--accent-red);
+  text-transform: uppercase;
 }
 
 .btn-choice:hover {
-  background: var(--primary-hover);
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 6px 22px rgba(192, 108, 108, 0.35);
+  background: var(--accent-pink);
+  color: #000;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--accent-red);
 }
 
 /* GENDER PAGE BUTTONS */
 .gender-btn {
-  background: #F8DDE2;
-  /* soft sakura */
-  border: 2px solid #D18484;
-  /* rosewood outline */
-  color: #4F2B2B;
-  /* soft brown text */
-  padding: 18px 28px;
-  font-size: 1.25rem;
-  border-radius: 24px;
-  font-weight: 600;
-  transition: 0.25s ease;
+  background: #000;
+  border: 2px solid var(--accent-pink);
+  color: var(--text-primary);
+  padding: 20px 40px;
+  font-size: 2rem;
+  font-family: var(--font-main);
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(209, 132, 132, 0.18);
+  transition: 0.1s ease;
+  box-shadow: 6px 6px 0px var(--accent-red);
+  margin: 0 10px;
 }
 
 .gender-btn:hover {
-  background: #D18484;
-  /* rose blush */
-  color: #FFF6EB;
-  /* cream text when hovered */
-  transform: translateY(-3px);
+  background: var(--accent-pink);
+  color: #000;
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px var(--accent-red);
 }
 
 
 /* MOBILE */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.3rem;
+    font-size: 3rem;
   }
 
   .scene-text {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 
   .btn-choice {
-    font-size: 1rem;
-    padding: 14px 22px;
+    font-size: 1.4rem;
+    padding: 10px;
   }
 
   .text-box {
-    top: 6%;
-    padding: 24px;
+    top: 5%;
   }
 }
 
@@ -154,134 +175,102 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--bg-gradient);
+  background: var(--bg-color);
   position: relative;
   overflow: hidden;
 }
 
-/* Floating Particles Background Effect */
+/* Glitchy Background Effect */
 .start-screen-container::before {
   content: "";
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background-image: radial-gradient(#FFF 1px, transparent 1px),
-    radial-gradient(#FFF 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: 0 0, 25px 25px;
-  opacity: 0.1;
-  animation: particleMove 60s linear infinite;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
   z-index: 0;
+  pointer-events: none;
 }
 
-@keyframes particleMove {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(-50px, -50px);
-  }
-}
 
 .main-title {
-  font-family: var(--font-title);
-  font-size: 5rem;
-  font-weight: 700;
-  background: linear-gradient(to bottom, #FFF, #FFD700);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+  font-family: var(--font-main);
+  font-size: 6rem;
+  font-weight: 400;
+  color: var(--accent-pink);
+  text-shadow: 4px 4px 0px var(--accent-red);
   margin-bottom: 0.5rem;
   z-index: 10;
-  animation: titleFloat 3s ease-in-out infinite;
+  animation: glitch 2s infinite;
 }
 
 .subtitle {
-  font-family: var(--font-body);
-  font-size: 1.5rem;
+  font-family: var(--font-main);
+  font-size: 2rem;
   color: var(--text-secondary);
   margin-bottom: 4rem;
-  letter-spacing: 2px;
-  z-index: 10;
-  opacity: 0.8;
-}
-
-@keyframes titleFloat {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.character-selection {
-  display: flex;
-  gap: 40px;
-  z-index: 10;
 }
 
 .char-card {
-  background: var(--glass-panel);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--accent-pink);
   padding: 30px;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.2s ease;
   cursor: pointer;
   width: 220px;
+  box-shadow: 8px 8px 0px var(--accent-red);
 }
 
 .char-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 20px var(--accent-glow);
-  border-color: var(--accent-glow);
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0px var(--accent-red);
+  background: #2a1520;
 }
 
 .char-img-placeholder {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  /* Square for retro feel */
+  background: #000;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--text-primary);
+  color: var(--accent-pink);
 }
 
 .char-card h3 {
-  font-family: var(--font-title);
-  color: var(--text-primary);
-  font-size: 1.5rem;
+  font-family: var(--font-main);
+  color: var(--accent-pink);
+  font-size: 2rem;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .char-card p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-size: 1.2rem;
   margin-top: 5px;
+  font-family: var(--font-main);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .main-title {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .character-selection {
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
   }
 
   .char-card {

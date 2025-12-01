@@ -7,26 +7,26 @@ export default function StartScreen() {
 
     return (
         <div className="start-screen-container">
-            <h1 className="main-title">Spirit Path</h1>
-            <p className="subtitle">Choose your destiny</p>
+            <h1 className="main-title">LOVE OR DEATH</h1>
+            <p className="subtitle">Choose your obsession</p>
 
             <div className="character-selection">
                 <div
                     className="char-card"
                     onClick={() => startGame("female", femaleSrc)}
                 >
-                    <div className="char-img-placeholder">🌸</div>
-                    <h3>Female</h3>
-                    <p>Grace & Intuition</p>
+                    <div className="char-img-placeholder">🔪</div>
+                    <h3>The Obsessive</h3>
+                    <p>"I will never let you go..."</p>
                 </div>
 
                 <div
                     className="char-card"
                     onClick={() => startGame("male", maleSrc)}
                 >
-                    <div className="char-img-placeholder">🌙</div>
-                    <h3>Male</h3>
-                    <p>Strength & Resolve</p>
+                    <div className="char-img-placeholder">⛓️</div>
+                    <h3>The Possessive</h3>
+                    <p>"You belong to me now."</p>
                 </div>
             </div>
         </div>

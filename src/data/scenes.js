@@ -3,19 +3,19 @@ import seoulMarket from "../assets/backgrounds/seoul_market.png";
 import kyotoShrine from "../assets/backgrounds/kyoto_shrine.png";
 import chinaLake from "../assets/backgrounds/china_lake.png";
 
-export const virtues = ["strength", "harmony", "affection", "wisdom", "loyalty"];
+export const virtues = ["obsession", "survival", "madness", "submission", "dominance"];
 
 export const scenes = {
   intro_forest: {
     id: "intro_forest",
     background: introForest,
-    title: "The Spirit Path",
-    text: `You stand at the edge of a bioluminescent forest. The air hums with ancient energy.\nFireflies dance around you, waiting for you to take the first step.`,
+    title: "The Locked Room",
+    text: `You wake up in a dark room. The air smells of rusted iron and sweet perfume.\nA note is pinned to your chest with a knife: "Don't leave me."`,
     choices: [
       {
-        label: "Step onto the mossy path 🌿",
+        label: "Pull the knife out 🔪",
         next: "path_choice",
-        virtue: "strength",
+        virtue: "survival",
       },
     ],
   },
@@ -23,23 +23,23 @@ export const scenes = {
   path_choice: {
     id: "path_choice",
     background: introForest,
-    title: "Crossroads of Realms",
-    text: `Three distant lights call you from different lands.`,
+    title: "Escape Route",
+    text: `The door is unlocked, but the hallway stretches into three distorted paths.\nEach one feels like a trap.`,
     choices: [
       {
-        label: "Follow the neon hum of Seoul Night Market 🌙",
+        label: "Run towards the neon lights (Seoul) 🌃",
         next: "seoul_market",
-        virtue: "strength",
+        virtue: "madness",
       },
       {
-        label: "Follow the soft lanterns of Kyoto Shrine 🎐",
+        label: "Hide in the old shrine (Kyoto) ⛩️",
         next: "kyoto_shrine",
-        virtue: "wisdom",
+        virtue: "submission",
       },
       {
-        label: "Follow the reflection of a Chinese Lantern Lake 🏮",
+        label: "Follow the blood trail to the lake (China) 🩸",
         next: "china_lake",
-        virtue: "harmony",
+        virtue: "obsession",
       },
     ],
   },
@@ -47,23 +47,23 @@ export const scenes = {
   seoul_market: {
     id: "seoul_market",
     background: seoulMarket,
-    title: "Seoul Night Market",
-    text: `Music, street food and neon lights dance around you.\nA vendor smiles: "처음 왔어요? (First time here?)"`,
+    title: "Midnight Stalker Alley",
+    text: `The market is empty, but the screens are watching you.\nA figure in a mask blocks your path. "Why are you running, darling?"`,
     choices: [
       {
-        label: "Order Tteokbokki (Spicy, bold) 🔥",
+        label: "Scream for help 😱",
         next: "seoul_karaoke",
-        virtue: "strength",
+        virtue: "survival",
       },
       {
-        label: "Order Hotteok (Warm, sweet) 🍯",
+        label: "Ask who they are ❓",
         next: "seoul_karaoke",
-        virtue: "affection",
+        virtue: "obsession",
       },
       {
-        label: "Order Kimbap (Balanced, classic) 🍙",
+        label: "Attack them ⚔️",
         next: "seoul_karaoke",
-        virtue: "wisdom",
+        virtue: "dominance",
       },
     ],
   },
@@ -71,23 +71,23 @@ export const scenes = {
   seoul_karaoke: {
     id: "seoul_karaoke",
     background: seoulMarket,
-    title: "Karaoke Glow",
-    text: `A glowing karaoke booth waits.\n"What kind of song will you sing?"`,
+    title: "Karaoke of Screams",
+    text: `They drag you into a karaoke booth. The song playing is a recording of your own voice sleeping.\n"Sing for me, or stay here forever."`,
     choices: [
       {
-        label: "Powerful K-rock song 🎸",
+        label: "Sing a love song 🎤",
         next: "preview_ending",
-        virtue: "strength",
+        virtue: "submission",
       },
       {
-        label: "Soft emotional ballad 💖",
+        label: "Smash the screen 🔨",
         next: "preview_ending",
-        virtue: "affection",
+        virtue: "dominance",
       },
       {
-        label: "Fun K-pop dance track 💃",
+        label: "Beg for mercy 😭",
         next: "preview_ending",
-        virtue: "harmony",
+        virtue: "survival",
       },
     ],
   },
@@ -95,11 +95,11 @@ export const scenes = {
   preview_ending: {
     id: "preview_ending",
     background: introForest,
-    title: "A Presence Watching",
-    text: `Something ancient watches from the trees... not hostile, but curious.`,
+    title: "He is Watching",
+    text: `The shadows lengthen. You feel cold breath on your neck.\n"I found you."`,
     choices: [
       {
-        label: "End demo (calculate spirit)",
+        label: "Accept your fate (End Demo)",
         next: "ending_demo",
         virtue: null,
       },
@@ -109,12 +109,12 @@ export const scenes = {
   ending_demo: {
     id: "ending_demo",
     background: introForest,
-    title: "Which spirit follows you?",
+    title: "Game Over... or Beginning?",
     isEnding: true,
-    text: `The full spirit selection will appear here.\nThis is only a demo ending.`,
+    text: `The full nightmare continues later.\nWill you survive their love?`,
     choices: [
       {
-        label: "Restart journey",
+        label: "Try to escape again",
         next: "intro_forest",
         virtue: null,
       },
@@ -125,18 +125,18 @@ export const scenes = {
   kyoto_shrine: {
     id: "kyoto_shrine",
     background: kyotoShrine,
-    title: "Fushimi Inari Shrine",
-    text: `Thousands of vermilion torii gates wind up the mountain.\nA white fox (Kitsune) watches you from the shadows.`,
+    title: "Cursed Shrine",
+    text: `The torii gates are painted with fresh blood.\nA fox with too many eyes watches you from the shadows.`,
     choices: [
       {
-        label: "Bow respectfully to the spirit 🙇",
+        label: "Pray for protection 🙏",
         next: "kyoto_ritual",
-        virtue: "harmony",
+        virtue: "submission",
       },
       {
-        label: "Ask the fox for guidance 🦊",
+        label: "Stare back at the fox 👁️",
         next: "kyoto_ritual",
-        virtue: "wisdom",
+        virtue: "madness",
       },
     ],
   },
@@ -144,23 +144,23 @@ export const scenes = {
   kyoto_ritual: {
     id: "kyoto_ritual",
     background: kyotoShrine,
-    title: "The Sacred Ritual",
-    text: `The fox leads you to an ancient altar where incense burns.\n"To know the path, you must know yourself."`,
+    title: "The Blood Ritual",
+    text: `The fox transforms into a beautiful man with a twisted smile.\n"Your soul is so pretty. Let me keep it."`,
     choices: [
       {
-        label: "Meditate on your past actions 🧘",
+        label: "Offer your hand 🤝",
         next: "preview_ending",
-        virtue: "wisdom",
+        virtue: "submission",
       },
       {
-        label: "Offer a prayer for your loved ones 🙏",
+        label: "Run away 🏃",
         next: "preview_ending",
-        virtue: "affection",
+        virtue: "survival",
       },
       {
-        label: "Vow to protect this sacred place ⚔️",
+        label: "Laugh hysterically 😂",
         next: "preview_ending",
-        virtue: "loyalty",
+        virtue: "madness",
       },
     ],
   },
@@ -169,18 +169,18 @@ export const scenes = {
   china_lake: {
     id: "china_lake",
     background: chinaLake,
-    title: "Moonlit Lantern Lake",
-    text: `The full moon reflects on the calm water, disturbed only by koi fish.\nA stone dragon statue seems to hum with energy.`,
+    title: "Lake of Tears",
+    text: `The lake is filled with red water. Hands reach out from the depths.\nA dragon statue weeps black tears.`,
     choices: [
       {
-        label: "Light a floating lantern 🏮",
+        label: "Touch the water 🌊",
         next: "china_riddle",
-        virtue: "harmony",
+        virtue: "obsession",
       },
       {
-        label: "Study the dragon's inscriptions 📜",
+        label: "Inspect the statue 🐉",
         next: "china_riddle",
-        virtue: "wisdom",
+        virtue: "madness",
       },
     ],
   },
@@ -188,23 +188,23 @@ export const scenes = {
   china_riddle: {
     id: "china_riddle",
     background: chinaLake,
-    title: "The Dragon's Riddle",
-    text: `The dragon speaks in a voice like grinding stones:\n"I have no voice, but I tell stories. I have no wings, but I fly. What am I?"`,
+    title: "The Dragon's Curse",
+    text: `The statue whispers:\n"I kill what I love, so I never have to lose it. What am I?"`,
     choices: [
       {
-        label: "A Book 📖",
+        label: "A Monster 👹",
         next: "preview_ending",
-        virtue: "wisdom",
+        virtue: "survival",
       },
       {
-        label: "A Lantern 🏮",
+        label: "A Lover 💔",
         next: "preview_ending",
-        virtue: "harmony",
+        virtue: "obsession",
       },
       {
-        label: "A Spirit 👻",
+        label: "Me 🪞",
         next: "preview_ending",
-        virtue: "strength",
+        virtue: "madness",
       },
     ],
   },

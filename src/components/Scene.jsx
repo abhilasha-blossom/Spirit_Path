@@ -1,5 +1,5 @@
 import Fireflies from "./Fireflies";
-import Sakura from "./Sakura";
+
 import Fog from "./Fog";
 import { useGame } from "../context/GameContext";
 import { useState } from "react";
@@ -41,6 +41,18 @@ export default function Scene() {
         overflow: "hidden",
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "rgba(0, 0, 0, 0.6)", // Dark overlay
+          zIndex: 0
+        }}
+      />
+
       <div className="text-box">
         <h1>{currentScene.title}</h1>
         <p className="scene-text">{currentScene.text}</p>
@@ -53,7 +65,6 @@ export default function Scene() {
       {/* Fireflies magical effect */}
       <Fireflies />
       <Fog />
-      <Sakura />
 
       {/* Character Removed as requested */}
 

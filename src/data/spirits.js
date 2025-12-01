@@ -1,32 +1,32 @@
 export const spirits = {
-    strength: {
-        name: "The Tiger Spirit",
-        symbol: "🐯",
-        description: "You walk with courage and fire. The Tiger guides those who face challenges head-on.",
-        color: "#ff6b6b",
+    obsession: {
+        name: "Forever Together",
+        symbol: "💍",
+        description: "You belong to them now. No more running. No more hiding. Just the two of you, forever in this room.",
+        color: "#ff1493", // Deep Pink
     },
-    harmony: {
-        name: "The Koi Spirit",
-        symbol: "🐟",
-        description: "You seek balance and flow. The Koi guides those who bring peace to chaos.",
-        color: "#4ecdc4",
+    survival: {
+        name: "The Escape",
+        symbol: "🏃",
+        description: "You made it out alive. But every shadow looks like them. Every phone call is silence. They are still watching.",
+        color: "#4ecdc4", // Teal (Cold)
     },
-    affection: {
-        name: "The Rabbit Spirit",
-        symbol: "🐰",
-        description: "You lead with a gentle heart. The Rabbit guides those who value kindness above all.",
-        color: "#ff9ff3",
+    madness: {
+        name: "Broken Mind",
+        symbol: "🌀",
+        description: "You saw too much. You laughed when you should have screamed. Now you understand their love perfectly.",
+        color: "#a55eea", // Purple
     },
-    wisdom: {
-        name: "The Owl Spirit",
-        symbol: "🦉",
-        description: "You see what others miss. The Owl guides those who seek truth in the shadows.",
-        color: "#feca57",
+    submission: {
+        name: "The Pet",
+        symbol: "⛓️",
+        description: "You stopped fighting. It's easier this way. They feed you, they dress you, they love you. Good pet.",
+        color: "#ff6b6b", // Soft Red
     },
-    loyalty: {
-        name: "The Wolf Spirit",
-        symbol: "🐺",
-        description: "You stand by your pack. The Wolf guides those who protect their own.",
-        color: "#5f27cd",
+    dominance: {
+        name: "The Killer",
+        symbol: "🔪",
+        description: "You didn't just survive. You became the monster. Now they are the one begging for mercy.",
+        color: "#ff0000", // Pure Red
     },
 };
