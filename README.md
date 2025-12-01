@@ -8,7 +8,7 @@
 
 <p align="center" style="font-size: 18px;">
 <b>A dark, cinematic interactive journey shaped by your choices, emotions & virtues.</b><br/>
-🌌 Dark Folklore • 🩸 Psychological Horror Elements • 🎭 Spirit Companions • 💮 Glitch Aesthetic
+🌌 Dark Folklore • 🩸 Psychological Horror Elements • 🎭 Multiple Endings • 💮 Glitch Aesthetic
 </p>
 
 <br/><br/>
@@ -33,7 +33,7 @@ Your choices don't just change the story—they alter the world around you.
 *   **Save & Load System**: Robust local persistence. Your progress is safe, even if you close the browser.
 *   **Endings Gallery**: A persistent collection of unlocked endings. Can you find them all?
 *   **Inventory System**: Collect items (like the "Old Key") that unlock new paths later in the story.
-*   **Virtue Tracking**: Your decisions secretly build stats in Strength, Harmony, Affection, Wisdom, and Loyalty.
+*   **Virtue Tracking**: Your decisions secretly build stats in Survival, Obsession, Madness, Submission, and Dominance.
 *   **Timed Choices**: High-stakes decisions with a visual countdown timer.
 
 ### ⚙️ UX & Polish
@@ -44,15 +44,17 @@ Your choices don't just change the story—they alter the world around you.
 
 <br/><br/>
 
-<h2 style="color:#E38FFF;">🕊️ Virtues & Spirits</h2>
+<h2 style="color:#E38FFF;">🎭 Virtue Endings</h2>
+
+Your hidden choices determine your psychological fate. There are no "good" or "bad" endings, only consequences:<br/><br/>
 
 <table>
-<tr><th>Virtue</th><th>Spirit</th><th>Element</th></tr>
-<tr><td>Strength (力)</td><td>🐯 Tiger</td><td>Fire</td></tr>
-<tr><td>Harmony (和)</td><td>🕊️ Crane</td><td>Air</td></tr>
-<tr><td>Affection (愛)</td><td>🦊 Kitsune</td><td>Blossom</td></tr>
-<tr><td>Wisdom (知)</td><td>🐉 Dragon</td><td>Cloud</td></tr>
-<tr><td>Loyalty (信)</td><td>🐺 Wolf</td><td>Moon</td></tr>
+<tr><th>Virtue</th><th>Ending Title</th><th>Theme</th></tr>
+<tr><td>Survival (生存)</td><td><b>SURVIVED</b></td><td>Escaping with your life, but losing your soul.</td></tr>
+<tr><td>Obsession (執着)</td><td><b>ETERNAL LOVE</b></td><td>Becoming one with the darkness forever.</td></tr>
+<tr><td>Madness (狂気)</td><td><b>BROKEN MIND</b></td><td>When reality fractures and only the void remains.</td></tr>
+<tr><td>Submission (服従)</td><td><b>THE PET</b></td><td>Finding comfort in the cage.</td></tr>
+<tr><td>Dominance (支配)</td><td><b>THE NEW MASTER</b></td><td>Killing the monster to take its throne.</td></tr>
 </table>
 
 <br/><br/>
