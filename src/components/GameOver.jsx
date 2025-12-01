@@ -2,7 +2,6 @@ import { useGame } from "../context/GameContext";
 import kyotoDeathImg from "../assets/ui/death_kanji.png";
 import seoulDeathImg from "../assets/ui/seoul_death.png";
 import chinaDeathImg from "../assets/ui/china_death.png";
-import skullDeathImg from "../assets/ui/skull_death.png";
 
 export default function GameOver() {
     const { resetGame, currentScene } = useGame();
@@ -94,20 +93,55 @@ export default function GameOver() {
         );
     }
 
-    // Default Settings (Skull)
-    let deathImage = skullDeathImg;
-    let animationStyle = "pulse 3s infinite ease-in-out";
-    let imageWidth = "300px";
+    // Default Settings (Skull Emoji)
+    let deathContent = (
+        <div style={{ position: "relative", display: "inline-block" }}>
+            <div style={{ fontSize: "150px", animation: "skull-shake 0.2s infinite", filter: "drop-shadow(0 0 10px red)" }}>
+                💀
+            </div>
+            {/* Ghost Effect */}
+            <div style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                fontSize: "150px",
+                opacity: 0.5,
+                filter: "blur(5px) hue-rotate(90deg)",
+                animation: "ghost-float 2s infinite ease-in-out",
+                pointerEvents: "none"
+            }}>
+                💀
+            </div>
+        </div>
+    );
 
     // Path Specific Overrides
     if (currentScene && currentScene.id.includes("seoul")) {
-        deathImage = seoulDeathImg;
-        animationStyle = "glitch-slam 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards, glitch-twitch 2s infinite";
-        imageWidth = "400px";
+        deathContent = (
+            <img
+                src={seoulDeathImg}
+                alt="Death"
+                style={{
+                    width: "400px",
+                    marginBottom: "30px",
+                    animation: "glitch-slam 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards, glitch-twitch 2s infinite",
+                }}
+            />
+        );
     } else if (currentScene && currentScene.id.includes("kyoto")) {
-        deathImage = kyotoDeathImg;
-        animationStyle = "impact-slam 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards, blood-pulse 3s infinite ease-in-out";
-        imageWidth = "400px";
+        deathContent = (
+            <img
+                src={kyotoDeathImg}
+                alt="Death"
+                style={{
+                    width: "400px",
+                    marginBottom: "30px",
+                    animation: "impact-slam 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards, blood-pulse 3s infinite ease-in-out",
+                }}
+            />
+        );
     }
 
     return (
@@ -156,6 +190,18 @@ export default function GameOver() {
                         6% { transform: translate(0); filter: hue-rotate(0deg); }
                         100% { transform: translate(0); }
                     }
+                    @keyframes skull-shake {
+                        0% { transform: translate(0, 0) rotate(0deg); filter: drop-shadow(0 0 10px red); }
+                        25% { transform: translate(-5px, 5px) rotate(-5deg); filter: drop-shadow(0 0 20px darkred); }
+                        50% { transform: translate(5px, -5px) rotate(5deg); filter: drop-shadow(0 0 30px red); }
+                        75% { transform: translate(-5px, -5px) rotate(-5deg); filter: drop-shadow(0 0 20px darkred); }
+                        100% { transform: translate(0, 0) rotate(0deg); filter: drop-shadow(0 0 10px red); }
+                    }
+                    @keyframes ghost-float {
+                        0% { opacity: 0; transform: scale(1) translateY(0); }
+                        50% { opacity: 0.5; transform: scale(1.2) translateY(-20px); }
+                        100% { opacity: 0; transform: scale(1.5) translateY(-40px); }
+                    }
                     @keyframes pulse {
                         0% { transform: scale(1); opacity: 1; }
                         50% { transform: scale(1.05); opacity: 0.8; }
@@ -164,15 +210,7 @@ export default function GameOver() {
                 `}
             </style>
 
-            <img
-                src={deathImage}
-                alt="Death"
-                style={{
-                    width: imageWidth,
-                    marginBottom: "30px",
-                    animation: animationStyle,
-                }}
-            />
+            {deathContent}
 
             <h1 style={{
                 fontSize: "5rem",
