@@ -19,7 +19,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-
 /* GLOBAL */
 html,
 body,
@@ -61,19 +60,16 @@ body::after {
   z-index: 20;
 }
 
-
 /* Title */
 h1 {
   font-size: 4rem;
   font-weight: 400;
-  /* Pixel fonts don't usually need bold */
   margin-bottom: 10px;
   letter-spacing: 2px;
   color: var(--accent-pink);
   text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 0 0 10px var(--accent-red);
   text-transform: uppercase;
 }
-
 
 /* Scene description */
 .scene-text {
@@ -87,8 +83,6 @@ h1 {
   border: 2px solid var(--accent-pink);
   box-shadow: 5px 5px 0px var(--accent-red);
 }
-
-
 
 /* BUTTONS */
 .choices {
@@ -104,25 +98,45 @@ h1 {
   z-index: 50;
 }
 
+/* NEW BUTTON STYLES */
 .btn-choice {
-  background: #000;
-  border: 2px solid var(--accent-pink);
-  color: var(--accent-pink);
+  background: linear-gradient(90deg, #ef1980, #ff6c9d);
+  /* Hotpink Gradient */
+  border: 2px solid #fff;
+  color: #fff;
   font-family: var(--font-main);
   font-size: 1.8rem;
-  padding: 10px 20px;
+  padding: 15px 40px;
   text-align: center;
   cursor: pointer;
-  transition: 0.1s ease;
-  box-shadow: 4px 4px 0px var(--accent-red);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--accent-pink);
   text-transform: uppercase;
+  border-radius: 50px;
+  /* Rounded Pill Shape */
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  animation: pulse-glow 2s infinite;
+  margin-bottom: 10px;
 }
 
 .btn-choice:hover {
-  background: var(--accent-pink);
-  color: #000;
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--accent-red);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--accent-pink), 0 0 10px #fff;
+  background: linear-gradient(90deg, #ff4081, #ff1493);
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 10px var(--accent-pink);
+  }
+
+  50% {
+    box-shadow: 0 0 25px var(--accent-pink), 0 0 5px var(--accent-red);
+  }
+
+  100% {
+    box-shadow: 0 0 10px var(--accent-pink);
+  }
 }
 
 /* GENDER PAGE BUTTONS */
@@ -145,397 +159,6 @@ h1 {
   transform: translate(3px, 3px);
   box-shadow: 3px 3px 0px var(--accent-red);
 }
-
-
-/* MOBILE */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 3rem;
-  }
-
-  .scene-text {
-    font-size: 1.4rem;
-  }
-
-  .btn-choice {
-    font-size: 1.4rem;
-    padding: 10px;
-  }
-
-  .text-box {
-    top: 5%;
-  }
-}
-
-/* START SCREEN OVERHAUL */
-.start-screen-container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-color);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Glitchy Background Effect */
-.start-screen-container::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background:
-    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  background-size: 100% 2px, 3px 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-
-.main-title {
-  font-family: var(--font-main);
-  font-size: 6rem;
-  font-weight: 400;
-  color: var(--accent-pink);
-  text-shadow: 4px 4px 0px var(--accent-red);
-  align-items: center;
-  transition: all 0.2s ease;
-  --accent-red: #ff0000;
-  /* Pure Red */
-  --accent-glow: #ff69b4;
-  /* Hot Pink */
-
-  --font-main: "VT323", monospace;
-  /* Retro Pixel Font */
-}
-
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
-
-/* GLOBAL */
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  font-family: var(--font-main);
-  background: var(--bg-color);
-  color: var(--text-primary);
-}
-
-/* SCANLINE OVERLAY */
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: repeating-linear-gradient(0deg,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 1px,
-      transparent 2px);
-  pointer-events: none;
-  z-index: 100;
-}
-
-.text-box {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 800px;
-  width: 90%;
-  text-align: center;
-  z-index: 20;
-}
-
-
-/* Title */
-h1 {
-  font-size: 4rem;
-  font-weight: 400;
-  /* Pixel fonts don't usually need bold */
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  color: var(--accent-pink);
-  text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 0 0 10px var(--accent-red);
-  text-transform: uppercase;
-}
-
-
-/* Scene description */
-.scene-text {
-  font-size: 1.8rem;
-  line-height: 1.4;
-  margin-top: 10px;
-  color: var(--text-primary);
-  text-shadow: 2px 2px 0px #000;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 15px;
-  border: 2px solid var(--accent-pink);
-  box-shadow: 5px 5px 0px var(--accent-red);
-}
-
-
-
-/* BUTTONS */
-.choices {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  max-width: 600px;
-  gap: 15px;
-  z-index: 50;
-}
-
-.btn-choice {
-  background: #000;
-  border: 2px solid var(--accent-pink);
-  color: var(--accent-pink);
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  padding: 10px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.1s ease;
-  box-shadow: 4px 4px 0px var(--accent-red);
-  text-transform: uppercase;
-}
-
-.btn-choice:hover {
-  background: var(--accent-pink);
-  color: #000;
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--accent-red);
-}
-
-/* GENDER PAGE BUTTONS */
-.gender-btn {
-  background: #000;
-  border: 2px solid var(--accent-pink);
-  color: var(--text-primary);
-  padding: 20px 40px;
-  font-size: 2rem;
-  font-family: var(--font-main);
-  cursor: pointer;
-  transition: 0.1s ease;
-  box-shadow: 6px 6px 0px var(--accent-red);
-  margin: 0 10px;
-}
-
-.gender-btn:hover {
-  background: var(--accent-pink);
-  color: #000;
-  transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0px var(--accent-red);
-}
-
-
-/* MOBILE */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 3rem;
-  }
-
-  .scene-text {
-    font-size: 1.4rem;
-  }
-
-  .btn-choice {
-    font-size: 1.4rem;
-    padding: 10px;
-  }
-
-  .text-box {
-    top: 5%;
-  }
-}
-
-/* START SCREEN OVERHAUL */
-.start-screen-container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-color);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Glitchy Background Effect */
-.start-screen-container::before {
-  content: "";
-  position: absolute;
-
-  height: 100%;
-  background:
-    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  background-size: 100% 2px, 3px 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-
-.main-title {
-  font-family: var(--font-main);
-  font-size: 6rem;
-  font-weight: 400;
-  color: var(--accent-pink);
-  text-shadow: 4px 4px 0px var(--accent-red);
-  align-items: center;
-  transition: all 0.2s ease;
-  --accent-red: #ff0000;
-  /* Pure Red */
-  --accent-glow: #ff69b4;
-  /* Hot Pink */
-
-  --font-main: "VT323", monospace;
-  /* Retro Pixel Font */
-}
-
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
-
-/* GLOBAL */
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  font-family: var(--font-main);
-  background: var(--bg-color);
-  color: var(--text-primary);
-}
-
-/* SCANLINE OVERLAY */
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: repeating-linear-gradient(0deg,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 1px,
-      transparent 2px);
-  pointer-events: none;
-  z-index: 100;
-}
-
-.text-box {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 800px;
-  width: 90%;
-  text-align: center;
-  z-index: 20;
-}
-
-
-/* Title */
-h1 {
-  font-size: 4rem;
-  font-weight: 400;
-  /* Pixel fonts don't usually need bold */
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  color: var(--accent-pink);
-  text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 0 0 10px var(--accent-red);
-  text-transform: uppercase;
-}
-
-
-/* Scene description */
-.scene-text {
-  font-size: 1.8rem;
-  line-height: 1.4;
-  margin-top: 10px;
-  color: var(--text-primary);
-  text-shadow: 2px 2px 0px #000;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 15px;
-  border: 2px solid var(--accent-pink);
-  box-shadow: 5px 5px 0px var(--accent-red);
-}
-
-
-
-/* BUTTONS */
-.choices {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  max-width: 600px;
-  gap: 15px;
-  z-index: 50;
-}
-
-.btn-choice {
-  background: #000;
-  border: 2px solid var(--accent-pink);
-  color: var(--accent-pink);
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  padding: 10px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.1s ease;
-  box-shadow: 4px 4px 0px var(--accent-red);
-  text-transform: uppercase;
-}
-
-.btn-choice:hover {
-  background: var(--accent-pink);
-  color: #000;
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--accent-red);
-}
-
-/* GENDER PAGE BUTTONS */
-.gender-btn {
-  background: #000;
-  border: 2px solid var(--accent-pink);
-  color: var(--text-primary);
-  padding: 20px 40px;
-  font-size: 2rem;
-  font-family: var(--font-main);
-  cursor: pointer;
-  transition: 0.1s ease;
-  box-shadow: 6px 6px 0px var(--accent-red);
-  margin: 0 10px;
-}
-
-.gender-btn:hover {
-  background: var(--accent-pink);
-  color: #000;
-  transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0px var(--accent-red);
-}
-
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -583,6 +206,211 @@ h1 {
   gap: 20px;
   z-index: 10;
   flex-wrap: wrap;
+}
+
+.main-title {
+  font-family: var(--font-main);
+  font-size: 6rem;
+  font-weight: 400;
+  color: var(--accent-pink);
+  text-shadow: 4px 4px 0px var(--accent-red);
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.character-selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  z-index: 10;
+  flex-wrap: nowrap;
+  /* Force single row */
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.char-card {
+  background: #000;
+  border: 2px solid var(--accent-pink);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  width: 250px;
+  /* Fixed width for desktop */
+  box-shadow: 10px 10px 0px var(--accent-red);
+  /* Solid red shadow */
+  position: relative;
+}
+
+.char-card:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 6px 6px 0px var(--accent-red);
+  background: #1a0b14;
+}
+
+.char-img-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 0;
+  border: 1px solid #fff;
+  /* White border for image box */
+  background: #000;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--accent-pink);
+}
+
+.char-card h3 {
+  font-family: var(--font-main);
+  color: var(--accent-pink);
+  font-size: 2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.char-card p {
+  color: #fff;
+  /* White text for subtitle */
+  font-size: 1rem;
+  margin-top: 5px;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 600px;
+  gap: 15px;
+  z-index: 50;
+}
+
+/* NEW BUTTON STYLES */
+.btn-choice {
+  background: linear-gradient(90deg, #ef1980, #ff6c9d);
+  /* Hotpink Gradient */
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 1.8rem;
+  padding: 15px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--accent-pink);
+  text-transform: uppercase;
+  border-radius: 50px;
+  /* Rounded Pill Shape */
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  animation: pulse-glow 2s infinite;
+  margin-bottom: 10px;
+}
+
+.btn-choice:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--accent-pink), 0 0 10px #fff;
+  background: linear-gradient(90deg, #ff4081, #ff1493);
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 10px var(--accent-pink);
+  }
+
+  50% {
+    box-shadow: 0 0 25px var(--accent-pink), 0 0 5px var(--accent-red);
+  }
+
+  100% {
+    box-shadow: 0 0 10px var(--accent-pink);
+  }
+}
+
+/* GENDER PAGE BUTTONS */
+.gender-btn {
+  background: #000;
+  border: 2px solid var(--accent-pink);
+  color: var(--text-primary);
+  padding: 20px 40px;
+  font-size: 2rem;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: 0.1s ease;
+  box-shadow: 6px 6px 0px var(--accent-red);
+  margin: 0 10px;
+}
+
+.gender-btn:hover {
+  background: var(--accent-pink);
+  color: #000;
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px var(--accent-red);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .scene-text {
+    font-size: 1.4rem;
+  }
+
+  .btn-choice {
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+
+  .text-box {
+    top: 5%;
+  }
+}
+
+/* START SCREEN OVERHAUL */
+.start-screen-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glitchy Background Effect */
+.start-screen-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+  gap: 20px;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.main-title {
+  font-family: var(--font-main);
+  font-size: 6rem;
+  font-weight: 400;
+  color: var(--accent-pink);
+  text-shadow: 4px 4px 0px var(--accent-red);
+  align-items: center;
+  transition: all 0.2s ease;
 }
 
 .character-selection {
@@ -654,51 +482,266 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 3.5rem;
+/* CINEMATIC ANIMATIONS */
+
+/* Blood Shatter (China) */
+.blood-shatter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Brighter, more opaque red gradient */
+  background: radial-gradient(circle, transparent 40%, rgba(200, 0, 0, 0.6) 90%, rgba(100, 0, 0, 0.9) 100%);
+  box-shadow: inset 0 0 100px rgba(255, 0, 0, 0.5);
+  z-index: 15;
+  /* Higher z-index to sit above background overlays */
+  pointer-events: none;
+  animation: shatter-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  mix-blend-mode: normal;
+  /* Normal blend mode for better visibility */
+}
+
+.blood-shatter::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+}
+
+@keyframes shatter-in {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
   }
 
-  .character-selection {
-    gap: 15px;
-    padding: 0 10px;
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Obsessive Heartbeat (Seoul) */
+.heartbeat-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  pointer-events: none;
+  box-shadow: inset 0 0 50px rgba(255, 20, 147, 0.2);
+  animation: heartbeat 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes heartbeat {
+  0% {
+    box-shadow: inset 0 0 50px rgba(255, 20, 147, 0.2);
   }
 
-  .char-card {
-    flex: 1;
-    /* Equal width */
-    width: auto;
-    /* Reset fixed width */
-    padding: 15px;
-    box-shadow: 6px 6px 0px var(--accent-red);
+  10% {
+    box-shadow: inset 0 0 150px rgba(255, 20, 147, 0.6);
+    /* Lub */
   }
 
-  .char-img-placeholder {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  20% {
+    box-shadow: inset 0 0 50px rgba(255, 20, 147, 0.2);
   }
 
-  .char-card h3 {
-    font-size: 1.4rem;
+  30% {
+    box-shadow: inset 0 0 120px rgba(255, 20, 147, 0.5);
+    /* Dub */
   }
 
-  .char-card p {
-    font-size: 0.8rem;
+  40% {
+    box-shadow: inset 0 0 50px rgba(255, 20, 147, 0.2);
   }
 
-  .scene-text {
-    font-size: 1.4rem;
+  100% {
+    box-shadow: inset 0 0 50px rgba(255, 20, 147, 0.2);
+  }
+}
+
+/* Fireflies (Kyoto) - Glowing Insects */
+.fireflies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fireflies::before,
+.fireflies::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffaa00;
+  /* Orange/Gold */
+  box-shadow:
+    10vw 20vh 15px 4px #ff4500,
+    /* Red-Orange */
+    30vw 70vh 15px 4px #ffd700,
+    /* Gold */
+    80vw 40vh 15px 4px #ff8c00,
+    /* Dark Orange */
+    60vw 90vh 15px 4px #ffaa00;
+  animation: fly-across 15s linear infinite;
+  opacity: 0.9;
+}
+
+.fireflies::after {
+  width: 6px;
+  height: 6px;
+  background: #ffd700;
+  box-shadow:
+    90vw 10vh 15px 4px #ff4500,
+    20vw 50vh 15px 4px #ff8c00,
+    50vw 30vh 15px 4px #ffd700;
+  animation: fly-across 20s linear infinite reverse;
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translate(-10vw, 0) translateY(0);
+    opacity: 0;
   }
 
-  .btn-choice {
-    font-size: 1.4rem;
-    padding: 10px;
+  10% {
+    opacity: 1;
   }
 
-  .text-box {
-    top: 5%;
+  90% {
+    opacity: 1;
   }
+
+  100% {
+    transform: translate(110vw, -20px) translateY(20px);
+    opacity: 0;
+  }
+}
+
+/* Glitch Intense (Seoul) */
+.glitch-intense {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  pointer-events: none;
+  background: transparent;
+  box-shadow: inset 0 0 50px rgba(0, 255, 255, 0.2);
+  animation: glitch-anim 0.2s infinite;
+}
+
+@keyframes glitch-anim {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(-90deg);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Shadow Fog (Kyoto) */
+.shadow-fog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+  animation: fog-pulse 4s infinite alternate;
+}
+
+@keyframes fog-pulse {
+  0% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50px) translateX(20px);
+    opacity: 0.9;
+  }
+}
+
+/* --- Timer --- */
+.timer-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.timer-bar {
+  height: 100%;
+  background: #ff4757;
+  transition: width 1s linear;
+}
+
+/* --- Rain Effect --- */
+.rain-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.rain-drop {
+  position: absolute;
+  top: -20px;
+  width: 2px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  animation: rain-fall linear infinite;
+}
+
+@keyframes rain-fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* --- Glitch Overlay (VisualEffects) --- */
+.glitch-overlay {
+  position: absolute;
 }

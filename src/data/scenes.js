@@ -11,6 +11,7 @@ export const scenes = {
     background: introForest,
     title: "The Locked Room",
     text: `You wake up in a dark room. The air smells of rusted iron and sweet perfume.\nA note is pinned to your chest with a knife: "Don't leave me."`,
+    timer: 10,
     choices: [
       {
         label: "Pull the knife out 🔪",
@@ -25,6 +26,7 @@ export const scenes = {
     background: introForest,
     title: "Escape Route",
     text: `The door is unlocked, but the hallway stretches into three distorted paths.\nEach one feels like a trap.`,
+    timer: 15,
     choices: [
       {
         label: "Run towards the neon lights (Seoul) 🌃",
@@ -50,21 +52,44 @@ export const scenes = {
     background: seoulMarket,
     title: "Midnight Stalker Alley",
     text: `The market is empty, but the screens are watching you.\nA figure in a mask blocks your path. "Why are you running, darling?"`,
+    timer: 10, // Added Timer
     choices: [
       {
         label: "Scream for help 😱",
-        next: "seoul_subway",
+        next: "seoul_alley", // New Scene
         virtue: "survival",
       },
       {
         label: "Ask who they are ❓",
-        next: "seoul_subway",
+        next: "seoul_alley", // New Scene
         virtue: "obsession",
       },
       {
         label: "Attack them ⚔️",
-        next: "seoul_subway",
+        next: "seoul_alley", // New Scene
         virtue: "dominance",
+      },
+    ],
+  },
+
+  // New Scene
+  seoul_alley: {
+    id: "seoul_alley",
+    background: seoulMarket,
+    title: "Neon Labyrinth",
+    text: `You duck into a side alley. It's a dead end, but you find a dropped ID card.\nIt has YOUR face on it.`,
+    timer: 8,
+    choices: [
+      {
+        label: "Pick it up (Item: Key Card) 💳",
+        next: "seoul_subway",
+        virtue: "obsession",
+        item: "Key Card" // Adds item
+      },
+      {
+        label: "Leave it and run 🏃",
+        next: "seoul_subway",
+        virtue: "survival",
       },
     ],
   },
@@ -74,6 +99,7 @@ export const scenes = {
     background: seoulMarket,
     title: "Ghost Train",
     text: `You stumble into a subway station. The train arrives, but it's empty.\nReflections in the window show someone standing behind you.`,
+    timer: 10,
     choices: [
       {
         label: "Don't turn around 🚫",
@@ -93,6 +119,7 @@ export const scenes = {
     background: seoulMarket,
     title: "Neon Rain",
     text: `The train stops at a rooftop. Rain falls like static.\nThey are waiting for you at the edge. "Jump with me, or stay with me."`,
+    timer: 15,
     choices: [
       {
         label: "Push them off ✋",
@@ -118,16 +145,39 @@ export const scenes = {
     background: kyotoShrine,
     title: "Cursed Shrine",
     text: `The torii gates are painted with fresh blood.\nA fox with too many eyes watches you from the shadows.`,
+    timer: 12, // Added Timer
     choices: [
       {
         label: "Pray for protection 🙏",
-        next: "kyoto_forest",
+        next: "kyoto_bridge", // New Scene
         virtue: "submission",
       },
       {
         label: "Stare back at the fox 👁️",
+        next: "kyoto_bridge", // New Scene
+        virtue: "madness",
+      },
+    ],
+  },
+
+  // New Scene
+  kyoto_bridge: {
+    id: "kyoto_bridge",
+    background: kyotoShrine,
+    title: "Bridge of Spirits",
+    text: `You cross a red bridge. The fog clears to reveal a broken mask on the railing.\nIt whispers to you.`,
+    timer: 10,
+    choices: [
+      {
+        label: "Take the mask (Item: Fox Mask) 🎭",
         next: "kyoto_forest",
         virtue: "madness",
+        item: "Fox Mask"
+      },
+      {
+        label: "Kick it into the water 🌊",
+        next: "kyoto_forest",
+        virtue: "dominance",
       },
     ],
   },
@@ -137,6 +187,7 @@ export const scenes = {
     background: kyotoShrine,
     title: "Whispering Bamboo",
     text: `The bamboo stalks whisper your name. You find a mask on the ground.\nIt looks exactly like your face.`,
+    timer: 10,
     choices: [
       {
         label: "Put it on 🎭",
@@ -156,6 +207,7 @@ export const scenes = {
     background: kyotoShrine,
     title: "The Fox's Wedding",
     text: `You reach the inner sanctum. The fox deity is waiting in human form.\n"Be my spouse, or be my dinner."`,
+    timer: 15,
     choices: [
       {
         label: "Bow down 🙇",
@@ -181,16 +233,39 @@ export const scenes = {
     background: chinaLake,
     title: "Lake of Tears",
     text: `The lake is filled with red water. Hands reach out from the depths.\nA dragon statue weeps black tears.`,
+    timer: 15, // Added Timer
     choices: [
       {
         label: "Touch the water 🌊",
-        next: "china_wedding",
+        next: "china_palace", // New Scene
         virtue: "obsession",
       },
       {
         label: "Inspect the statue 🐉",
-        next: "china_wedding",
+        next: "china_palace", // New Scene
         virtue: "madness",
+      },
+    ],
+  },
+
+  // New Scene
+  china_palace: {
+    id: "china_palace",
+    background: chinaLake,
+    title: "Forbidden Palace",
+    text: `The gates of a submerged palace open. A jade comb floats towards you.\nIt feels warm, like living flesh.`,
+    timer: 10,
+    choices: [
+      {
+        label: "Keep the comb (Item: Jade Comb) 🪮",
+        next: "china_wedding",
+        virtue: "submission",
+        item: "Jade Comb"
+      },
+      {
+        label: "Break it in half 💔",
+        next: "china_wedding",
+        virtue: "dominance",
       },
     ],
   },
@@ -200,6 +275,7 @@ export const scenes = {
     background: chinaLake,
     title: "Ghost Wedding",
     text: `Paper money falls from the sky. A palanquin arrives.\nInside is a corpse wearing wedding robes... holding a picture of you.`,
+    timer: 10,
     choices: [
       {
         label: "Get in the palanquin 🏮",
@@ -219,6 +295,7 @@ export const scenes = {
     background: chinaLake,
     title: "Dragon's Hoard",
     text: `You fall into a cave of bones. The Dragon awakens.\n"I kill what I love, so I never have to lose it. Are you ready to be loved?"`,
+    timer: 20,
     choices: [
       {
         label: "Run for your life 🏃",
