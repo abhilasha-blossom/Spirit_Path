@@ -7,22 +7,44 @@
 </p>
 
 <p align="center" style="font-size: 18px;">
-<b>A magical anime-inspired journey shaped by your choices, emotions & virtues.</b><br/>
-🌌 East Asian culture • 🎐 Folklore • 🎭 Spirit Companions • 💮 Aesthetic UI
+<b>A dark, cinematic interactive journey shaped by your choices, emotions & virtues.</b><br/>
+🌌 Dark Folklore • 🩸 Psychological Horror Elements • 🎭 Spirit Companions • 💮 Glitch Aesthetic
 </p>
 
 <br/><br/>
 
 <h2 style="color:#E38FFF;">🌸 About the Game</h2>
 
-Spirit Path is a cinematic interactive story where your decisions determine your destiny.<br/>
-Travel across mystical East Asian worlds and uncover which ancient spirit companion chooses you.
+**Spirit Path** has evolved into a visually immersive, psychological interactive fiction. It blends traditional East Asian folklore with a modern, dark, and glitchy aesthetic (inspired by "Dating Killmulator" vibes).
+
+Your choices don't just change the story—they alter the world around you.
+
+<br/><br/>
+
+<h2 style="color:#E38FFF;">✨ Key Features (Implemented)</h2>
+
+### 🎨 Visual Immersion
+*   **Seoul Path (The Glitch)**: Experience "Neon Rain" and an "Obsessive Heartbeat" overlay that pulses with tension.
+*   **China Path (The Blood)**: Witness a dramatic "Blood Shatter" cinematic effect during critical moments.
+*   **Kyoto Path (The Mist)**: Navigate through "Shadow Fog" and glowing "Golden Fireflies".
+*   **Dynamic Atmosphere**: Backgrounds darken, glitches intensify, and rain falls based on the narrative arc.
+
+### 🛠️ Core Systems
+*   **Save & Load System**: Robust local persistence. Your progress is safe, even if you close the browser.
+*   **Endings Gallery**: A persistent collection of unlocked endings. Can you find them all?
+*   **Inventory System**: Collect items (like the "Old Key") that unlock new paths later in the story.
+*   **Virtue Tracking**: Your decisions secretly build stats in Strength, Harmony, Affection, Wisdom, and Loyalty.
+*   **Timed Choices**: High-stakes decisions with a visual countdown timer.
+
+### ⚙️ UX & Polish
+*   **Settings Menu**: Toggle Audio/SFX and a robust "Clear Data" option with 2-step confirmation.
+*   **Responsive UI**: Glassmorphism design that adapts to desktop and mobile.
+*   **Accessibility**: Screen-reader friendly modals and keyboard-accessible menus.
+*   **Safety**: Error boundaries ensure your save data is never corrupted.
 
 <br/><br/>
 
 <h2 style="color:#E38FFF;">🕊️ Virtues & Spirits</h2>
-
-Your hidden choices awaken one spirit based on your personality:<br/><br/>
 
 <table>
 <tr><th>Virtue</th><th>Spirit</th><th>Element</th></tr>
@@ -33,72 +55,56 @@ Your hidden choices awaken one spirit based on your personality:<br/><br/>
 <tr><td>Loyalty (信)</td><td>🐺 Wolf</td><td>Moon</td></tr>
 </table>
 
-<br/>
-<i>No winners. No losers. Every ending is beautiful in its own way.</i>
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">🎮 Current Progress</h2>
-
-<table>
-<tr><th>Feature</th><th>Status</th></tr>
-<tr><td>Scene system</td><td>✔</td></tr>
-<tr><td>Virtue scoring</td><td>✔</td></tr>
-<tr><td>Character walking animation</td><td>✔</td></tr>
-<tr><td>Fireflies visual effect</td><td>✔</td></tr>
-<tr><td>Fog & Sakura particles</td><td>🌸 In progress</td></tr>
-<tr><td>Lantern glow & depth lighting</td><td>🔜</td></tr>
-<tr><td>Ending spirit reveal animation</td><td>🔜</td></tr>
-<tr><td>Background music</td><td>🔜</td></tr>
-</table>
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">🌈 Screenshots / Preview (coming soon)</h2>
-<!-- 📌 Add screenshots here once visuals are complete -->
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">🔗 Live Demo (optional)</h2>
-<!-- 📌 Add link here after deployment (Netlify / Vercel) -->
-
 <br/><br/>
 
 <h2 style="color:#E38FFF;">🧠 Installation</h2>
+
+```bash
+# Clone the repository
 git clone https://github.com/abhilasha-blossom/Spirit_Path.git
 
+# Navigate to directory
 cd Spirit_Path
-npm install
-npm run dev
 
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
 
 <br/><br/>
 
-<h2 style="color:#E38FFF;">📁 Folder Structure</h2>
+<h2 style="color:#E38FFF;">📁 Project Structure</h2>
 
-🌸 src </br>
-┣ 🎀 assets </br>
-┃ ┣ 🏞 backgrounds </br>
-┃ ┗ 🧚 characters </br>
-┣ 💫 components </br>
-┣ 🔮 context </br>
-┣ 📜 data </br>
-┣ 🌙 App.jsx </br>
-┣ 🌙 main.jsx </br>
-┗ 🎨 styles.css
+```
+🌸 src
+┣ 🎀 assets
+┃ ┣ 🏞 backgrounds  (Darkened/Atmospheric images)
+┃ ┗ 🧚 characters   (Spirit avatars)
+┣ 💫 components
+┃ ┣ 🎭 Scene.jsx        (Main game loop & logic)
+┃ ┣ 🏆 Gallery.jsx      (Unlockable endings modal)
+┃ ┣ ⚙️ Settings.jsx     (Audio & Data management)
+┃ ┣ ✨ VisualEffects.jsx (Rain, Glitch, Heartbeat overlays)
+┃ ┣ ⏳ Timer.jsx        (Countdown mechanic)
+┃ ┗ ☠️ GameOver.jsx     (Bad ending screens)
+┣ 🔮 context
+┃ ┗ 🧠 GameContext.jsx  (Global state & Save system)
+┣ 📜 data
+┃ ┣ 📖 scenes.js        (Narrative branching logic)
+┃ ┗ 🎵 audio.js         (SFX mappings)
+┗ 🎨 styles.css         (Pure CSS animations & variables)
+```
 
 <br/><br/>
 
 <h2 style="color:#E38FFF;">💫 Tech Stack</h2>
 
-<table>
-<tr><th>Category</th><th>Tools</th></tr>
-<tr><td>Frontend</td><td>React + Vite</td></tr>
-<tr><td>State</td><td>React Context API</td></tr>
-<tr><td>Styling</td><td>Pure CSS</td></tr>
-<tr><td>Animations</td><td>CSS Particles & Transitions</td></tr>
-<tr><td>Design Style</td><td>Ghibli watercolor / pastel anime</td></tr>
-</table>
+*   **Frontend**: React 18 + Vite
+*   **State Management**: React Context API
+*   **Styling**: Pure CSS3 (Variables, Keyframe Animations, Flexbox/Grid)
+*   **Persistence**: LocalStorage API (with JSON error handling)
 
 <br/><br/>
 
@@ -113,6 +119,4 @@ If you enjoy the project, please ⭐ star the repository — it really motivates
 <br/><br/>
 
 <h2 style="color:#E38FFF;">📝 License</h2>
-This project is currently <b>personal & experimental</b>.<br/>
-Open-source license will be added once development stabilizes.
-
+This project is currently <b>personal & experimental</b>.
