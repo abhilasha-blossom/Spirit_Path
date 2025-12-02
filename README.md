@@ -1,124 +1,99 @@
-<h1 align="center" style="font-size: 48px; color: #C86BFF; font-weight: 800;">
-👻 SPIRIT PATH — An Aesthetic Interactive Story Game 🩸 
+<h1 align="center" style="font-size: 48px; color: #ff1493; font-weight: 800; text-shadow: 2px 2px 0px #ff0000;">
+👻 SPIRIT PATH 🩸
 </h1>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=FF6D1F&text=🩸%20Spirit%20Path%20%20👻&fontColor=222222&fontSize=45&animation=twinkling" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=1a0b14&text=LOVE%20OR%20DEATH&fontColor=ff1493&fontSize=50&animation=fadeIn&fontAlign=50" />
 </p>
 
-<p align="center" style="font-size: 18px;">
-<b>A dark, cinematic interactive journey shaped by your choices, emotions & virtues.</b><br/>
-🌌 Dark Folklore • 🩸 Psychological Horror Elements • 🎭 Multiple Endings • 💮 Glitch Aesthetic
+<p align="center" style="font-size: 18px; color: #ffb7c5;">
+<b>"You belong to me now... forever."</b><br/>
+A psychological horror visual novel about obsession, sanity, and the spirits that refuse to let you go.
 </p>
 
-<br/><br/>
-
-<h2 style="color:#E38FFF;">🌸 About the Game</h2>
-
-**Spirit Path** has evolved into a visually immersive, psychological interactive fiction. It blends traditional East Asian folklore with a modern, dark, and glitchy aesthetic (inspired by "Dating Killmulator" vibes).
-
-Your choices don't just change the story—they alter the world around you.
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">✨ Key Features (Implemented)</h2>
-
-### 🎨 Visual Immersion
-*   **Seoul Path (The Glitch)**: Experience "Neon Rain" and an "Obsessive Heartbeat" overlay that pulses with tension.
-*   **China Path (The Blood)**: Witness a dramatic "Blood Shatter" cinematic effect during critical moments.
-*   **Kyoto Path (The Mist)**: Navigate through "Shadow Fog" and glowing "Golden Fireflies".
-*   **Dynamic Atmosphere**: Backgrounds darken, glitches intensify, and rain falls based on the narrative arc.
-
-### 🛠️ Core Systems
-*   **Save & Load System**: Robust local persistence. Your progress is safe, even if you close the browser.
-*   **Endings Gallery**: A persistent collection of unlocked endings. Can you find them all?
-*   **Inventory System**: Collect items (like the "Old Key") that unlock new paths later in the story.
-*   **Virtue Tracking**: Your decisions secretly build stats in Survival, Obsession, Madness, Submission, and Dominance.
-*   **Timed Choices**: High-stakes decisions with a visual countdown timer.
-
-### ⚙️ UX & Polish
-*   **Settings Menu**: Toggle Audio/SFX and a robust "Clear Data" option with 2-step confirmation.
-*   **Responsive UI**: Glassmorphism design that adapts to desktop and mobile.
-*   **Accessibility**: Screen-reader friendly modals and keyboard-accessible menus.
-*   **Safety**: Error boundaries ensure your save data is never corrupted.
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">🎭 Virtue Endings</h2>
-
-Your hidden choices determine your psychological fate. There are no "good" or "bad" endings, only consequences:<br/><br/>
-
-<table>
-<tr><th>Virtue</th><th>Ending Title</th><th>Theme</th></tr>
-<tr><td>Survival (生存)</td><td><b>SURVIVED</b></td><td>Escaping with your life, but losing your soul.</td></tr>
-<tr><td>Obsession (執着)</td><td><b>ETERNAL LOVE</b></td><td>Becoming one with the darkness forever.</td></tr>
-<tr><td>Madness (狂気)</td><td><b>BROKEN MIND</b></td><td>When reality fractures and only the void remains.</td></tr>
-<tr><td>Submission (服従)</td><td><b>THE PET</b></td><td>Finding comfort in the cage.</td></tr>
-<tr><td>Dominance (支配)</td><td><b>THE NEW MASTER</b></td><td>Killing the monster to take its throne.</td></tr>
-</table>
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">🧠 Installation</h2>
-
-```bash
-# Clone the repository
-git clone https://github.com/abhilasha-blossom/Spirit_Path.git
-
-# Navigate to directory
-cd Spirit_Path
-
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
-```
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">📁 Project Structure</h2>
-
-```
-🌸 src
-┣ 🎀 assets
-┃ ┣ 🏞 backgrounds  (Darkened/Atmospheric images)
-┃ ┗ 🧚 characters   (Spirit avatars)
-┣ 💫 components
-┃ ┣ 🎭 Scene.jsx        (Main game loop & logic)
-┃ ┣ 🏆 Gallery.jsx      (Unlockable endings modal)
-┃ ┣ ⚙️ Settings.jsx     (Audio & Data management)
-┃ ┣ ✨ VisualEffects.jsx (Rain, Glitch, Heartbeat overlays)
-┃ ┣ ⏳ Timer.jsx        (Countdown mechanic)
-┃ ┗ ☠️ GameOver.jsx     (Bad ending screens)
-┣ 🔮 context
-┃ ┗ 🧠 GameContext.jsx  (Global state & Save system)
-┣ 📜 data
-┃ ┣ 📖 scenes.js        (Narrative branching logic)
-┃ ┗ 🎵 audio.js         (SFX mappings)
-┗ 🎨 styles.css         (Pure CSS animations & variables)
-```
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">💫 Tech Stack</h2>
-
-*   **Frontend**: React 18 + Vite
-*   **State Management**: React Context API
-*   **Styling**: Pure CSS3 (Variables, Keyframe Animations, Flexbox/Grid)
-*   **Persistence**: LocalStorage API (with JSON error handling)
-
-<br/><br/>
-
-<h2 style="color:#E38FFF;">🤍 Creator</h2>
-
-Made with love by <b>Abhilasha 🌸</b><br/>
-<i>Turning imagination into interactive worlds.</i>
+<p align="center">
+  <img src="https://img.shields.io/badge/Sanity-Unstable-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Ending-Unknown-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Vibe-Yandere-pink?style=for-the-badge" />
+</p>
 
 <br/>
-If you enjoy the project, please ⭐ star the repository — it really motivates!
 
-<br/><br/>
+<h2 style="color:#ff69b4;">🌸 The Story</h2>
 
-<h2 style="color:#E38FFF;">📝 License</h2>
-This project is currently <b>personal & experimental</b>.
+You wake up in a locked room with no memory. A note pinned to your chest reads: *"Don't leave me."*
+To escape, you must navigate three distorted paths—**Seoul, Kyoto, and China**—each guarded by a spirit who claims to love you.
+
+But there is a fourth path... a hidden **Abandoned Asylum** where the truth of your "illness" lies.
+Will you escape? Will you submit? Or will you become the monster they fear?
+
+<br/>
+
+<h2 style="color:#ff69b4;">✨ New Features (v2.0)</h2>
+
+### 🧠 Sanity System
+Your choices matter. Making "Madness" choices (like laughing at a dragon or singing with ghosts) lowers your **Sanity**.
+*   **> 50%**: Normal vision.
+*   **< 50%**: Colors fade, contrast spikes.
+*   **< 30%**: Text starts to **g l i t c h**. The world breaks.
+
+### 🏥 The Abandoned Asylum
+A new, hidden path for those brave enough to seek the truth.
+*   **Puzzle Mechanics**: Find clues (like the *Bloody Diary*) to crack keypad codes.
+*   **Dark Lore**: Uncover what really happened on Halloween night.
+
+### 📖 Spirit Log
+Collect cursed items across different runs to unlock the **True Truth**.
+*   **Key Card** (Seoul)
+*   **Fox Mask** (Kyoto)
+*   **Jade Comb** (China)
+*   **Bloody Diary** (Asylum)
+
+### 🕰️ Real-Time Nightmare Mode
+Play the game between **12:00 AM and 3:00 AM** (your local time).
+The game knows. The screen will change. The spirits will be closer.
+
+<br/>
+
+<h2 style="color:#ff69b4;">🎭 The Characters</h2>
+
+| Character | Type | Obsession |
+| :--- | :--- | :--- |
+| **Saki** ✂️ | The Obsessive | "I'll cut away anyone who looks at you." |
+| **Rina** 🧸 | The Innocent | "Let's play forever and ever..." |
+| **Ren** 🎤 | The Idol | "You are my only fan. My only possession." |
+| **Kaito** 🎸 | The Broken | "Fix me. Break me. Just don't leave me." |
+
+<br/>
+
+<h2 style="color:#ff69b4;">� Endings</h2>
+
+There are no "Good" endings. Only consequences.
+
+*   **SURVIVED**: You escaped, but at what cost?
+*   **ETERNAL LOVE**: You accepted their twisted affection.
+*   **BROKEN MIND**: You saw the truth and laughed.
+*   **THE PET**: You stopped fighting.
+*   **TRUE TRUTH**: [REDACTED]
+
+<br/>
+
+<h2 style="color:#ff69b4;">�️ Tech Stack</h2>
+
+*   **Core**: React 19 + Vite
+*   **Styling**: Vanilla CSS (Glassmorphism, Glitch Animations)
+*   **State**: Context API + LocalStorage Persistence
+*   **Assets**: Custom AI Art + CSS Filters
+
+<br/>
+
+<h2 style="color:#ff69b4;">🤍 Creator</h2>
+
+Made with 🩸 and 🍬 by **Abhilasha**.
+*Turning nightmares into aesthetic experiences.*
+
+<br/>
+
+<p align="center">
+  <i>"Why are you running? I just want to hold you."</i>
+</p>
