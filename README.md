@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Rubik+Glitch&size=60&pause=1000&color=FF0000&center=true&vCenter=true&width=600&lines=LOVE+OR+DEATH;RUN+WHILE+YOU+CAN;THEY+ARE+WATCHING" alt="Creepy Glitch Text" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Rubik+Glitch&size=45&pause=1000&color=FF0000&center=true&vCenter=true&width=700&lines=LOVE+OR+DEATH;RUN+WHILE+YOU+CAN;THEY+ARE+WATCHING" alt="Creepy Glitch Text" />
 </p>
 
 <p align="center" style="font-size: 18px; color: #ffb7c5;">
