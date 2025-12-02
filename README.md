@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=F7C6FF&text=👻%20Spirit%20Path%20%20🩸&fontColor=46245B&fontSize=45&animation=twinkling" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=FF6D1F&text=🩸%20Spirit%20Path%20%20👻&fontColor=222222&fontSize=45&animation=twinkling" />
 </p>
 
 <p align="center" style="font-size: 18px;">
