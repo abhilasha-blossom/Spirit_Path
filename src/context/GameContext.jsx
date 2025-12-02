@@ -81,13 +81,42 @@ export function GameProvider({ children }) {
     setCurrentSceneId("intro_forest");
   }
 
+  // --- Sanity System ---
+  const [sanity, setSanity] = useState(100);
+
+  function reduceSanity(amount) {
+    setSanity((prev) => Math.max(0, prev - amount));
+  }
+
+  function restoreSanity(amount) {
+    setSanity((prev) => Math.min(100, prev + amount));
+  }
+
+  // --- Persistent Collection (Lore/Items) ---
+  const [collectedItems, setCollectedItems] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("spiritPath_collection") || "[]");
+    } catch {
+      return [];
+    }
+  });
+
+  function addToCollection(item) {
+    if (!collectedItems.includes(item)) {
+      const newCollection = [...collectedItems, item];
+      setCollectedItems(newCollection);
+      localStorage.setItem("spiritPath_collection", JSON.stringify(newCollection));
+    }
+  }
+
   // --- Inventory System ---
   const [inventory, setInventory] = useState([]);
 
   function addToInventory(item) {
     if (!inventory.includes(item)) {
       setInventory((prev) => [...prev, item]);
-      playSfx("click"); // Reuse click sound for now, or add a specific pickup sound
+      addToCollection(item); // Also add to persistent collection
+      playSfx("click");
     }
   }
 
@@ -95,7 +124,6 @@ export function GameProvider({ children }) {
     setInventory((prev) => prev.filter((i) => i !== item));
   }
 
-  // --- Save/Load System ---
   // --- Save/Load System ---
   const [hasSavedGame, setHasSavedGame] = useState(() => {
     try {
@@ -111,12 +139,13 @@ export function GameProvider({ children }) {
         currentSceneId,
         virtueScores,
         inventory,
+        sanity, // Save sanity
         playerGender,
         travellerImage,
         isMuted,
         selectedCharacter,
         selectedCharacterImage,
-        gameState: "GAME" // Always save as GAME state
+        gameState: "GAME"
       };
       localStorage.setItem("spiritPath_save", JSON.stringify(gameStateData));
       setHasSavedGame(true);
@@ -136,6 +165,7 @@ export function GameProvider({ children }) {
         setCurrentSceneId(parsed.currentSceneId);
         setVirtueScores(parsed.virtueScores);
         setInventory(parsed.inventory || []);
+        setSanity(parsed.sanity ?? 100); // Load sanity
         setPlayerGender(parsed.playerGender);
         setTravellerImage(parsed.travellerImage);
         setSelectedCharacter(parsed.selectedCharacter);
@@ -184,7 +214,12 @@ export function GameProvider({ children }) {
         selectedCharacter,
         selectedCharacterImage,
         gameState,
-        finalizeCharacterSelection
+        finalizeCharacterSelection,
+        // Sanity & Collection
+        sanity,
+        reduceSanity,
+        restoreSanity,
+        collectedItems
       }}
     >
       {children}

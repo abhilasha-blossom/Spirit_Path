@@ -2,6 +2,7 @@ import introForest from "../assets/backgrounds/intro_forest.png";
 import seoulMarket from "../assets/backgrounds/seoul_market.png";
 import kyotoShrine from "../assets/backgrounds/kyoto_shrine.png";
 import chinaLake from "../assets/backgrounds/china_lake.png";
+import asylumBg from "../assets/backgrounds/asylum.jpg";
 
 export const virtues = ["obsession", "survival", "madness", "submission", "dominance"];
 
@@ -43,6 +44,12 @@ export const scenes = {
         next: "china_lake",
         virtue: "obsession",
       },
+      {
+        label: "Enter the Abandoned Asylum 🏥",
+        next: "asylum_entrance",
+        virtue: "madness",
+        sanityCost: 10,
+      },
     ],
   },
 
@@ -56,18 +63,40 @@ export const scenes = {
     choices: [
       {
         label: "Scream for help 😱",
-        next: "seoul_alley", // New Scene
+        next: "seoul_chase", // New Scene
         virtue: "survival",
       },
       {
         label: "Ask who they are ❓",
-        next: "seoul_alley", // New Scene
+        next: "seoul_chase", // New Scene
         virtue: "obsession",
+        sanityCost: 5,
       },
       {
         label: "Attack them ⚔️",
-        next: "seoul_alley", // New Scene
+        next: "seoul_chase", // New Scene
         virtue: "dominance",
+      },
+    ],
+  },
+
+  // New Scene: Seoul Chase
+  seoul_chase: {
+    id: "seoul_chase",
+    background: seoulMarket,
+    title: "Neon Pursuit",
+    text: `You run through the crowded streets. The faces around you are blurring.\nAre they people? Or just static?`,
+    timer: 8,
+    choices: [
+      {
+        label: "Hide in a dumpster 🗑️",
+        next: "seoul_alley",
+        virtue: "submission",
+      },
+      {
+        label: "Keep running 🏃",
+        next: "seoul_alley",
+        virtue: "survival",
       },
     ],
   },
@@ -149,13 +178,36 @@ export const scenes = {
     choices: [
       {
         label: "Pray for protection 🙏",
-        next: "kyoto_bridge", // New Scene
+        next: "kyoto_garden", // New Scene
         virtue: "submission",
       },
       {
         label: "Stare back at the fox 👁️",
-        next: "kyoto_bridge", // New Scene
+        next: "kyoto_garden", // New Scene
         virtue: "madness",
+        sanityCost: 5,
+      },
+    ],
+  },
+
+  // New Scene: Kyoto Garden
+  kyoto_garden: {
+    id: "kyoto_garden",
+    background: kyotoShrine,
+    title: "Stone Garden",
+    text: `The rocks in the garden are arranged like graves. You hear weeping coming from the ground.`,
+    timer: 10,
+    choices: [
+      {
+        label: "Dig up the sound ⛏️",
+        next: "kyoto_bridge",
+        virtue: "madness",
+        sanityCost: 10,
+      },
+      {
+        label: "Walk away slowly 🚶",
+        next: "kyoto_bridge",
+        virtue: "survival",
       },
     ],
   },
@@ -237,13 +289,36 @@ export const scenes = {
     choices: [
       {
         label: "Touch the water 🌊",
-        next: "china_palace", // New Scene
+        next: "china_market", // New Scene
         virtue: "obsession",
       },
       {
         label: "Inspect the statue 🐉",
-        next: "china_palace", // New Scene
+        next: "china_market", // New Scene
         virtue: "madness",
+        sanityCost: 5,
+      },
+    ],
+  },
+
+  // New Scene: China Market
+  china_market: {
+    id: "china_market",
+    background: chinaLake,
+    title: "Ghost Market",
+    text: `Merchants with no faces are selling memories in jars. One jar has your name on it.`,
+    timer: 12,
+    choices: [
+      {
+        label: "Steal the jar 🏺",
+        next: "china_palace",
+        virtue: "dominance",
+      },
+      {
+        label: "Buy it with your blood 🩸",
+        next: "china_palace",
+        virtue: "submission",
+        sanityCost: 10,
       },
     ],
   },
@@ -311,8 +386,124 @@ export const scenes = {
         label: "Laugh at the beast 😂",
         next: "calculate_ending",
         virtue: "madness",
+        sanityCost: 20,
       },
     ],
+  },
+
+  // --- Asylum Path (New) ---
+  asylum_entrance: {
+    id: "asylum_entrance",
+    background: asylumBg,
+    title: "The Abandoned Asylum",
+    text: `The gates are rusted shut. A sign reads: "NO ONE LEAVES".\nYou hear children singing a nursery rhyme from inside.`,
+    timer: 15,
+    choices: [
+      {
+        label: "Climb the fence 🧗",
+        next: "asylum_ward",
+        virtue: "survival",
+      },
+      {
+        label: "Sing along 🎵",
+        next: "asylum_ward",
+        virtue: "madness",
+        sanityCost: 10,
+      },
+    ],
+  },
+
+  asylum_ward: {
+    id: "asylum_ward",
+    background: asylumBg,
+    title: "Rotting Ward",
+    text: `Beds line the walls, each with a stain in the shape of a person.\nA locked door blocks the way to the basement. It needs a code.`,
+    timer: 20,
+    puzzle: {
+      correctAnswer: "1031",
+      next: "asylum_basement",
+      failNext: "asylum_roof", // Fail leads to roof (bad ending path)
+    },
+    choices: [
+      {
+        label: "Search for the code (Item: Bloody Diary) 📖",
+        next: "asylum_ward", // Loop back to give hint? Or just give item and let them try puzzle
+        virtue: "obsession",
+        item: "Bloody Diary",
+        textOverride: "You found a diary. The last entry says: 'Halloween... 10/31... that's when they died.'",
+      },
+      {
+        label: "Smash the door 🔨",
+        next: "asylum_roof",
+        virtue: "dominance",
+      },
+    ],
+  },
+
+  asylum_basement: {
+    id: "asylum_basement",
+    background: asylumBg,
+    title: "The Truth",
+    text: `You found the secret lab. Jars of eyes line the shelves.\nIn the center is a ritual circle.`,
+    timer: 15,
+    choices: [
+      {
+        label: "Read the files 📂",
+        next: "asylum_roof",
+        virtue: "obsession",
+      },
+      {
+        label: "Burn it all 🔥",
+        next: "asylum_roof",
+        virtue: "dominance",
+      },
+    ],
+  },
+
+  asylum_roof: {
+    id: "asylum_roof",
+    background: asylumBg,
+    title: "The Final Jump",
+    text: `You reach the roof. The moon is bleeding.\nThe entities from all paths surround you.`,
+    timer: 20,
+    choices: [
+      {
+        label: "Jump 🕊️",
+        next: "calculate_ending",
+        virtue: "survival",
+      },
+      {
+        label: "Perform the Ritual (Requires: All Items) 🔮",
+        next: "special_ritual",
+        virtue: "madness",
+        requiredItems: ["Key Card", "Fox Mask", "Jade Comb", "Bloody Diary"],
+      },
+    ],
+  },
+
+  // --- Special Path ---
+  special_ritual: {
+    id: "special_ritual",
+    background: asylumBg,
+    title: "The Awakening",
+    text: `You place the items in the circle. The sky cracks open.\nYou are not the victim. You are the GOD of this world.`,
+    timer: 10,
+    choices: [
+      {
+        label: "Wake Up 👁️",
+        next: "special_ending",
+        virtue: "dominance",
+      },
+    ],
+  },
+
+  special_ending: {
+    id: "special_ending",
+    background: "",
+    title: "TRUE TRUTH",
+    isEnding: true,
+    text: "You woke up in your bed. It was just a game.\nBut why is the 'Fox Mask' sitting on your nightstand?",
+    choices: [{ label: "Play Again", next: "intro_forest", virtue: null }],
   },
 
   // --- Endings ---

@@ -78,7 +78,6 @@ export default function PeekingCharacter() {
             transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
             zIndex: 100,
             pointerEvents: "none",
-            filter: "drop-shadow(0 0 10px rgba(0,0,0,0.5))",
             width: "250px",
             height: "250px",
         };
