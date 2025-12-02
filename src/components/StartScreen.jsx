@@ -22,29 +22,28 @@ export default function StartScreen() {
                 <div
                     className="char-card"
                     onClick={() => startGame("female", femaleSrc)}
-                    style={{ width: "300px", padding: "35px" }}
                 >
                     <div className="char-img-placeholder">🔪</div>
                     <h3>The Obsessive</h3>
-                    <p style={{ fontSize: "0.9rem", width: "100%", maxWidth: "200px", whiteSpace: "normal", wordWrap: "break-word", textAlign: "center", lineHeight: "1.2", transform: "none", position: "static", margin: "10px 0 0 0" }}>"I will never let you go..."</p>
+                    <p style={{ fontSize: "0.9rem", width: "100%", whiteSpace: "normal", wordWrap: "break-word", textAlign: "center", lineHeight: "1.2", margin: "10px 0 0 0" }}>"I will never let you go..."</p>
                 </div>
 
                 <div
                     className="char-card"
                     onClick={() => startGame("male", maleSrc)}
-                    style={{ width: "300px", padding: "35px" }}
                 >
                     <div className="char-img-placeholder">⛓️</div>
                     <h3>The Possessive</h3>
-                    <p style={{ fontSize: "0.9rem", width: "100%", maxWidth: "200px", whiteSpace: "normal", wordWrap: "break-word", textAlign: "center", lineHeight: "1.2", transform: "none", position: "static", margin: "10px 0 0 0" }}>"You belong to me now."</p>
+                    <p style={{ fontSize: "0.9rem", width: "100%", whiteSpace: "normal", wordWrap: "break-word", textAlign: "center", lineHeight: "1.2", margin: "10px 0 0 0" }}>"You belong to me now."</p>
                 </div>
             </div>
 
             {/* Load Game Button (Only if save exists) */}
             {hasSavedGame && (
-                <div style={{ position: "absolute", bottom: "10%", zIndex: 100 }}>
+                <div className="load-game-container" style={{ position: "absolute", bottom: "10%", zIndex: 100 }}>
                     <button
                         onClick={loadGame}
+                        className="load-game-btn"
                         style={{
                             background: "rgba(255, 255, 255, 0.1)",
                             border: "1px solid var(--accent-pink)",
@@ -66,7 +65,7 @@ export default function StartScreen() {
             )}
 
             {/* Top Menu for Start Screen */}
-            <div style={{ position: "absolute", top: 20, right: 80, zIndex: 100, display: "flex", gap: "10px" }}>
+            <div className="top-menu" style={{ position: "absolute", top: 20, right: 80, zIndex: 100, display: "flex", gap: "10px" }}>
                 <button
                     onClick={() => setShowGallery(true)}
                     style={{ background: "none", border: "1px solid var(--accent-pink)", color: "var(--accent-pink)", padding: "8px 15px", cursor: "pointer", fontFamily: "var(--font-main)", textTransform: "uppercase" }}

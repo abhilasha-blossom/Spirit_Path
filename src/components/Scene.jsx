@@ -88,7 +88,7 @@ export default function Scene() {
             </div>
 
             {/* UI Controls */}
-            <div style={{ position: "absolute", top: 20, right: 80, zIndex: 2000, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "10px" }}>
+            <div className="top-menu" style={{ position: "absolute", top: 20, right: 80, zIndex: 2000, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "10px" }}>
                 <div style={{ display: "flex", gap: "10px" }}>
                     <button onClick={saveGame} style={{ background: "none", border: "1px solid white", color: "white", padding: "5px 10px", cursor: "pointer" }}>
                         💾 Save
@@ -163,7 +163,6 @@ export default function Scene() {
                             fontSize: "1.1rem",
                             cursor: "pointer",
                             boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-                            width: "100%"
                         }}
                     >
                         {choice.label}

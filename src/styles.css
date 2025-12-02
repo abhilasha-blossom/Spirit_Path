@@ -20,6 +20,12 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 /* GLOBAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
@@ -277,21 +283,6 @@ h1 {
   letter-spacing: 2px;
 }
 
-.char-card p {
-  color: #fff;
-  /* White text for subtitle */
-  font-size: 1rem;
-  margin-top: 5px;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  max-width: 600px;
-  gap: 15px;
-  z-index: 50;
-}
 
 /* NEW BUTTON STYLES */
 .btn-choice {
@@ -730,18 +721,169 @@ h1 {
   position: absolute;
   top: -20px;
   width: 2px;
-  height: 20px;
+
+  height: 15px;
   background: rgba(255, 255, 255, 0.6);
-  animation: rain-fall linear infinite;
+  animation: rain-fall 0.5s linear infinite;
 }
 
 @keyframes rain-fall {
-  to {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
     transform: translateY(100vh);
   }
 }
 
-/* --- Glitch Overlay (VisualEffects) --- */
-.glitch-overlay {
-  position: absolute;
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablet & Mobile Common Adjustments */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .main-title {
+    font-size: 5rem;
+  }
+
+  .text-box {
+    width: 95%;
+    max-width: 95%;
+  }
+
+  .scene-text {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+
+  /* Global Layout */
+  .start-screen-container {
+    padding: 20px;
+    height: 100vh;
+    justify-content: flex-start;
+    padding-top: 60px;
+    overflow-y: auto;
+    /* Allow scrolling if content overflows */
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+  }
+
+  .main-title {
+    font-size: 3.5rem;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .scene-text {
+    font-size: 1.2rem;
+    padding: 10px;
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+
+  /* Character Selection */
+  .character-selection {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 80px;
+    /* Space for bottom buttons */
+  }
+
+  .char-card {
+    width: 100% !important;
+    /* Override inline styles */
+    max-width: 300px;
+    padding: 20px !important;
+  }
+
+  .char-img-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .char-card h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Scene Layout */
+  .scene-container {
+    padding: 15px !important;
+  }
+
+  .text-box {
+    top: 15%;
+    /* Move up slightly */
+    width: 95%;
+  }
+
+  /* Choices & Buttons */
+  .choices {
+    bottom: 20px;
+    width: 95%;
+    gap: 10px;
+  }
+
+  .btn-choice {
+    font-size: 1.1rem;
+    padding: 12px 20px !important;
+    width: 100%;
+  }
+
+  /* Top Right Menu (Gallery, Settings, Save) */
+  .top-menu {
+    top: 10px !important;
+    right: 10px !important;
+    gap: 5px !important;
+  }
+
+  .top-menu button {
+    padding: 5px 8px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .inventory-display {
+    font-size: 0.9rem;
+  }
+
+  /* Load Game Button */
+  .load-game-container {
+    bottom: 20px !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .load-game-btn {
+    padding: 10px 20px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .char-card {
+    max-width: 100%;
+  }
 }
