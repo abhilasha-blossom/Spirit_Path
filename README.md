@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=1a0b14&text=LOVE%20OR%20DEATH&fontColor=ff1493&fontSize=50&animation=fadeIn&fontAlign=50" />
+  <img src="public/assets/ui/banner.png" width="100%" />
 </p>
 
 <p align="center" style="font-size: 18px; color: #ffb7c5;">
@@ -59,10 +59,14 @@ The game knows. The screen will change. The spirits will be closer.
 
 | Character | Type | Obsession |
 | :--- | :--- | :--- |
-| **Saki** ✂️ | The Obsessive | "I'll cut away anyone who looks at you." |
+| **Yumi** 🎀 | The Sweet | "I baked these cookies just for you... with a secret ingredient." |
+| **Mika** 🩸 | The Dangerous | "Bleed for me, and I'll let you live." |
 | **Rina** 🧸 | The Innocent | "Let's play forever and ever..." |
+| **Saki** ✂️ | The Obsessive | "I'll cut away anyone who looks at you." |
 | **Ren** 🎤 | The Idol | "You are my only fan. My only possession." |
 | **Kaito** 🎸 | The Broken | "Fix me. Break me. Just don't leave me." |
+| **Haru** 🎹 | The Genius | "I composed this symphony from your screams." |
+| **Yuki** 🎧 | The Silent | "I hear everything you think. You can't hide." |
 
 <br/>
 
