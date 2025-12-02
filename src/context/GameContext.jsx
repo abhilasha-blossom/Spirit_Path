@@ -11,12 +11,19 @@ export function GameProvider({ children }) {
     virtues.reduce((acc, v) => ({ ...acc, [v]: 0 }), {})
   );
 
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [selectedCharacterImage, setSelectedCharacterImage] = useState(null);
+  const [gameState, setGameState] = useState("START"); // START, CHAR_SELECT, GAME
+
   function resetGame() {
     setCurrentSceneId("intro_forest");
     setVirtueScores(virtues.reduce((acc, v) => ({ ...acc, [v]: 0 }), {}));
     setInventory([]);
     setPlayerGender(null);
     setTravellerImage(null);
+    setSelectedCharacter(null);
+    setSelectedCharacterImage(null);
+    setGameState("START");
   }
 
   function getTopVirtue(scores) {
@@ -63,7 +70,14 @@ export function GameProvider({ children }) {
     setPlayerGender(gender);
     setTravellerImage(imageSrc);
     playSfx("click");
-    // Ensure we start at the intro
+    setGameState("CHAR_SELECT"); // Transition to character selection
+  }
+
+  function finalizeCharacterSelection(charId, charImage) {
+    setSelectedCharacter(charId);
+    setSelectedCharacterImage(charImage);
+    playSfx("click");
+    setGameState("GAME"); // Start the actual game
     setCurrentSceneId("intro_forest");
   }
 
@@ -93,15 +107,18 @@ export function GameProvider({ children }) {
 
   function saveGame() {
     try {
-      const gameState = {
+      const gameStateData = {
         currentSceneId,
         virtueScores,
         inventory,
         playerGender,
         travellerImage,
-        isMuted
+        isMuted,
+        selectedCharacter,
+        selectedCharacterImage,
+        gameState: "GAME" // Always save as GAME state
       };
-      localStorage.setItem("spiritPath_save", JSON.stringify(gameState));
+      localStorage.setItem("spiritPath_save", JSON.stringify(gameStateData));
       setHasSavedGame(true);
       playSfx("click");
       alert("Game Saved!");
@@ -121,6 +138,9 @@ export function GameProvider({ children }) {
         setInventory(parsed.inventory || []);
         setPlayerGender(parsed.playerGender);
         setTravellerImage(parsed.travellerImage);
+        setSelectedCharacter(parsed.selectedCharacter);
+        setSelectedCharacterImage(parsed.selectedCharacterImage);
+        setGameState("GAME");
         if (parsed.isMuted !== undefined) setIsMuted(parsed.isMuted);
         playSfx("click");
       } else {
@@ -159,7 +179,12 @@ export function GameProvider({ children }) {
         removeFromInventory,
         saveGame,
         loadGame,
-        hasSavedGame
+        hasSavedGame,
+        // Character Selection
+        selectedCharacter,
+        selectedCharacterImage,
+        gameState,
+        finalizeCharacterSelection
       }}
     >
       {children}

@@ -10,6 +10,7 @@ import Gallery from "./Gallery";
 import VisualEffects from "./VisualEffects";
 import Settings from "./Settings";
 import GameOver from "./GameOver";
+import PeekingCharacter from "./PeekingCharacter";
 
 export default function Scene() {
     const { currentScene, goToScene, playSfx, inventory, addToInventory, saveGame } = useGame();
@@ -171,6 +172,7 @@ export default function Scene() {
             </div>
 
             {/* Visual Effects Layer */}
+            <PeekingCharacter />
             <VisualEffects />
 
             {/* Gallery Modal */}

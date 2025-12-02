@@ -1,7 +1,7 @@
 import { useGame } from "../context/GameContext";
 import { useState } from "react";
-import femaleSrc from "../assets/characters/female_v3.png";
-import maleSrc from "../assets/characters/male_v3.png";
+const femaleSrc = "/assets/characters/female_v3.png";
+const maleSrc = "/assets/characters/male_v3.png";
 import Gallery from "./Gallery";
 import Settings from "./Settings";
 
